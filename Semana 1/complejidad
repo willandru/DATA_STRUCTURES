@@ -1,0 +1,51 @@
+Definir de manera mas exacta lo quee es un algoritmo:
+Algoritmo: Un procedimiento computacional o secuencia de pasos computacionla,esbien defunidos, toman un conjunto de valores de entrada y producen un conjnto de valores de salida. 
+ELementos calves de un algoritmo:
+	- Exactitud ( con las mismas entradas e general deberia generar las mismas salidas, a no ser algiun elemento de aletoridad).
+	- Eficiente: Analisis de los recursos de lalgoritmo en su ejecucion, gaste la menor cantidad d e recursos
+		COMPLEJIDAD EN EL ESPACIO: Memorio, disco duro, ancho de banda de comunincacion ->{ }
+		COMPLEJIDAD EN TIMEPO: Timepo computacinal<- NOs centraremos en esta por ahora:
+		
+			¿Como medir la ocmpolejidad?
+		ANALISIS EMPÍRICO: 
+			-Prueba y error: Incorporar sentencias que midan el timepo de ejecucion de mi programa. Ejecutarlo avraias veces y sacar un promedio. Y con diferentes entradas,¿
+			SI lemeto una entrada mas laraga se demora más, si una mas corta s edemora menos?
+			Desventaja: debo implmentar primero el codigo y ponerlo a correr varias veces, y lso resultados se basan solo con ciertas entradas .
+			COrrerlos varias veces, y bajo las mismas CONDICIONES (no cnecesariamente s epuede lograr)
+		
+		
+		
+		ANALISIS TEÓRICO: 
+		
+		T: timepo de ejecucion: numero de operaciones primitivas o passos ejecutados. -> Depende  del tamaño de entrada
+		T(n) -> n es el tamaño de la entrada.
+		Para un algoritmo, usualmente el tiempo de esjecicion es funcion del tamaño d enetrada.
+		
+		
+		EJEMPOLO::  BUSQUEDA LINEAL
+		
+		[ a, b, c, d, e, ...., z] 
+		Mejor caso:  T(n) =1: OMEGA() --> Analisis de algoritmos
+	     --> Peor caso: T(n)= n : O()
+		Caso promedio: n/2 : THETA() --> Analisis de algoritmos
+		
+		CAntidad e operaciones primitivas de mi algoritmo.   LUego debo hacer un analisisd e esa funcion T(n)
+		ANALISIS ASINTOTIOCO: PODER DEFINIR UNA FUNCION QUE ME REPRESENTE COMO SE ESTA COMPORTANDO MI ALGORITMO, EL TIMPOO DE EJECUCION DEL ALGORITMO. 
+		
+		Numero de operaciones primitivas:
+				
+				double exp(double a, int n){
+				
+				 double res=1; 				//1
+				 int i =0;				//1
+				 while(i <n){				//1*(n+1)
+				  res = res*a;				//n*2
+				  i=i+1;				//n*2
+				 }
+				 return(res);				//1
+				}
+
+			T(n) = 1 + 1 +(n+1) +2n + 2n +1 = 4 + 5n
+			
+				Cual es la tendencia o funcion de ese polinomio
+			-> O(n) = n
