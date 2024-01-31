@@ -1,0 +1,3 @@
+g++ -std=c++14 -o main14 exercise1.cxx rectangle.cxx 
+
+./ main14
