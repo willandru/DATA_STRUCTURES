@@ -1,0 +1,257 @@
+Estructuras secuenciales:
+
+conceptos basicos y lineaminetos de cada tipo de estructura
+
+
+TIPO ABSTRACTO DE DATO: (TAD)
+
+Generalizar ucalqueir tipo personaliado, especificado de manera propia. "Como los struct" para 
+
+2 REQUISITOS:
+	-DAtos (represnetacion): Tener la representcon del tad, los datos que voya utiliozar para representarlo.
+	- Funciones y rpocediminetos (operaciones)
+	
+	DEFIINICION: - eSPECIFICACION (General , global. Formal, matematica)
+	IMplementacion. DEpendiente del lenguaje a usar.
+	
+
+Ecuacion de WIth:
+Programas = Algortimos + Datos
+
+TAD = INterfaz + Estado
+
+
+PLANTILLA TAD
+
+TAD nombre
+Conjunto minimo de datos:
+onombre valor (variable), tipo de dato(matriz de enteros, arreglo de caracteres, entero decimanl, caracter), descripción (ej. tengo una dato del vehiculo llamado placa que la almcaneo con cadna de caracteres:: representa la ID unica del vehiculo
+
+COmrpotamiento(operaciones) del objeto:
+nombre operacion (argumentos), descricopn fincional
+
+
+TAD Carrera
+
+Conjunot minimo de datos:
+- nombre, cadena de caracteres, identifiacion de la carrera.
+- numEst, numero entero, cantidad de estudiantes inscritos ene sa carrera.
+
+Comportamiento (operaciones) del objeto:
+OBtenerNombre(), retorna el nomrbe de la carrera
+OBtenerNUmEst(), retorna la cantidad de estudaiantes de la carrera
+FijarNOmbre(nuevoNOm), modifica el nombre actual de la carrera
+AgregarEstud(),
+EliminarEstd(),
+
+Diagrama de relacion entre TADS
+
+
+IMPLEMENTACION DE TADS
+
+Diferentes oisibiklidades:
+- Estructura fon datos y funciones propias o adicionaless
+- Clase con niveles de acceso
+: LIbreria, 2 archivos:
+
+- ENcabezado (.h):
+-COdigo (.cxx)
+
+--------------------------
+Opcion 1: datos en estructura, operaciones como funciones adicionales.
+
+struct CArrera{
+std:: string nombre;
+unsigned long numEst;
+};
+
+std:: string ObtenerNOmbre (Carrera *c);
+unisgned long OBtenerNumEst( Carrera *c);
+---------------------------
+
+OBCION 2:
+
+Struct Carrera{
+std:: string nombre;
+unsigned long numEst;
+
+std:: string OBtenerNOmbre
+..
+...
+.}
+
+--------------------------
+OPCION 3:
+
+class CArrera{
+public:
+CArrera(();
+std::tring ObtenerNOmbre();
+unsigned long OBtenerNUmEst();
+.
+.
+protected:
+.
+.
+---------------------------}
+
+
+
+SECUENCIAS:
+
+Una secuencia es una estructura que representa una lista de elemteots del mismo tipo, puestos de manera contigua:
+
+FOrmalmente:
+S={si eT: 1<= i n, ieN}
+S={S1, S2, S3,....,Sn}
+
+{1 1 2 3 5 8 13 ...}
+lista de elementos puestos nuno al otro lado del otro, todos del miesmo tipo de dato.
+
+
+SECUENCIA: siempre tiene primer elemento y ultimo elemento. PARA CUALQUIER ELEMENTO SE CUAL ES EL ANTERIOIR Y CUAL ES EL SIGUIENTE. LOS ELMENTOS TIENEN UNA POSCIION EN LA SECI¿UENCIA. 
+SECUENCIA 2 /= secuencia 1
+
+
+
+TAD Lista
+
+LISTA: Secuencia finita de datos, donde puedo definir cual e sel pirmoer, ultimo siguiente para todos los elemntos de la lista.
+
+Puedo recorrer la lista hacia adelante y hacia atras.
+
+Acceso aleatorio restignido--:  De la implementacion de la lista: Si queiro acceder a un elemento de esa listra no puedo ir directamente 
+
+Primero -Ultimo
+
+ULtimo -Primero
+
+NO puedo acceder a un elemnto, oslo puedo reccorrer la lista
+LIsta simple: solo puedo arrancar desde la cabeza, simplemente encadenada o lista uniderececional
+
+Lista estandar: doblemente encadenada o bidireccinal
+
+
+
+			TAD Lista
+			
+			
+TAD Lista
+COnjunto minimo de datos:
+- Cabeza, direccion en , primer elemento de la lista
+- COla, direccion en memoria
+Comportamiento:
+DUpiclarListga(), duplica la lista 
+AGregarELemento(indice), agrega un elemento en el indice 
+EliminarElemento(indice), elimina el elemnto especificado
+VaciarLista(), permite desocupar la lista
+GEtHEad(), deviuelve la direcicon de la cabeza
+GEtTail(), devuelve la direecciond e la cola.
+
+esVacia()
+tamaño()
+cabeza()
+cola()
+insertarCAbeza()
+insertarCOla()
+eliminarCABEZA
+ELIMINARcOLA
+insertar(pos, v)
+eliminar(pos)
+vaciar()
+
+
+
+
+TAD Pila
+
+Tope o cima,
+Arreglo vertical
+SOlopuedo ver el elemento del tope
+LIFO Last in Firts Out
+
+PUSH :Insertar añada un elemento en el tope
+POP: ELiminar
+ALgunas cosas con restriccion de acceso
+COntvertir un numero de base 10 a base 2
+342_10 -> 101010110_2
+Insertar y eliminar a traevez del tope.
+EStadop: un unioco dato: el tope de la pila
+INterfaz: push and l¿pull
+
+TAD PIla
+CONjunto minimo de datos:
+Tope, tipo plantilla, el tope de la pila
+COmportamiento (operaciones) del objeto:
+pull(V): elimina el tope de la lista
+push(): añade un elemento al tope de la lista
+esVacia()
+tope(), reotonra el tope
+vaciar(),
+
+
+
+
+			TAD Cola
+			
+INserciones solo por un lado
+Eliminaciones solo por el otro
+
+Inserto por el final de la lista
+SOlo puedo eliminar por la cabeza
+
+FIFO(fisrt in- first out
+Ejemplo: la fila del cajero, el primero en llegar es el primero en salir
+NO puedo rrecorrer
+NO acceso aleatorio
+solo puedo acceder al de adelanete y al de attras.
+
+TAD COLA
+Conjunto minimo de datos:
+CAbeza, plantilla dato, la cabeza de la cola
+Cola, plantilla dato, la cola de la cola
+Comportamiento(operaciones) del objeto:
+Cabeza()
+Cola()
+VAciar()
+insertar()
+eliminar()
+esVacia()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
