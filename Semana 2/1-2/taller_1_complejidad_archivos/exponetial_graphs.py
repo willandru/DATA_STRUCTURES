@@ -2,17 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read data from the file
-data1 = np.loadtxt('sort_random_table.txt')
-data2 = np.loadtxt('sort_inverse_table.txt')
-data3 = np.loadtxt('sort_sorted_table.txt')
+data = np.loadtxt('exponential_table.txt')
 
 # Extract columns
-x_values_1 = data1[:, 0]
-x_values_2 = data2[:, 0]
-x_values_3 = data3[:, 0]
-y_values_1 = data[:, 3]  
-y_values_2 = data[:, 3] 
-y_values_3 = data[:, 3] 
+x_values = data[:, 0]
+y_values1 = data[:, 3]  # 4th column
+y_values2 = data[:, 4]  # 5th column
 
 # Plotting the first graph
 plt.figure(figsize=(10, 5))
