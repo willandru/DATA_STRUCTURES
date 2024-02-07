@@ -1,0 +1,8 @@
+TAD Operacion BInaria
+COnjunto minimo de datos:
+-OPerando1, entero, real o caracter; primer elemento de la Operacion
+-OPerando2, entero, real o caracter; segudnod elmento de la Operacion
+- OPeracion, caracter, operacionna  aplicar, una entre: '+','-','+','/'
+
+Comportamiento (operaciones):
+- EvaluarOPeracion ( OPeracionBinaria); retorna el resultado de aplicar la operación sobre los operandos
