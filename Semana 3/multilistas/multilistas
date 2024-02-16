@@ -1,0 +1,21 @@
+		CONTENEDORES COMO INTERFAZ
+		
+Quese comporte como ina cola, pila, prioridodades...
+
+
+	std::que
+	
+PILA____ NO se puede recorrer___ PILA NO SE PUEDE RECORRER
+
+push, pop, top/front, empty
+
+COLA____ No se puede recorrer___ SOLO INSERTO POR LA COLA Y SACO POR LA CABEZA-
+
+
+
+LIST, STACK Y QUEUE
+
+
+---EXISTEN OTROS CONTENEODRES: COntenedores asociateivos: set{representar un conjunto , con operaciones de conjuntos}
+				map{hago asociason entre un dato y otro dato , la 'clave')
+				

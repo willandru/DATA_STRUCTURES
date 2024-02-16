@@ -1,0 +1,39 @@
+ITERADORES: LOs elemenots que permiten recorrer los contenedores.
+	TIPOS:
+		-entrada  :  solo permite sacar datos del contenedor
+		-salida   :   solo me permite poner cosas 
+		
+		input, output, forwqard, bidirectional, random-acces  :: ITERATORS
+		
+		VECTOR O DEQUE ::RANDOM-ACCES 
+		
+	OPERACIONES:
+		* (dereferenciacion)
+		++ , --: mueve el iterador a la siguiente posicion
+		==, !=: com,paracion de iteradores, si apuntan o no al mismo elemento.
+		=asigna una nueva posicion anualmente al inicio o final del iterador
+		
+		
+		*	* = 	++ 	-- 	==, != 	=
+input		si 	no 	si 	no 	si 	si
+output		no 	si 	si 	no 	no 	si
+forward	si 	si 	si 	si 	no 	si 	si
+bidirectional
+random-acces*	si	si	si	si	si
+			
+			* ademas soporta operaciones de acceso aleatiori: +n, -n, <, > ,,>=
+
+
+LISTA, VECTOR, DEQUE::: TIENEN FUNCIONES ::
+
+	FUNCIONES:
+		-begin :: posicion inicial de mi contenedor
+		-end :: La posicion dem memoria del elemento que esta depsues del último elemento del contenedor
+		-rbegin :: representa el inicio en la secuecnia in
+		-rend :: antes del primero , cunado voy a hacia atras.
+		
+		container::iterato
+
+ITERADORES INVALIDOS ::		
+		
+NORMALMENTE CUANDO MODIFICO, AGREGO O ELIMINO; El tierador se puede volver invalido
