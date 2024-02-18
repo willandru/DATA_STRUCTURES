@@ -1,0 +1,2 @@
+Arreglo asociativo, provee mapeo de un dato (clave) a otro (valor); requiere funcion de comparacion para la clave
+std::map #include<map>

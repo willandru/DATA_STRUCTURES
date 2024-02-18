@@ -1,0 +1,26 @@
+NO SE PUEDE ITERAR
+-push
+-pop
+-front
+-back
+-size
+-empty
+
+//DECLARACION
+
+std::queue< int > aux;
+
+//INSERCION DE DATOS
+
+for(inti=0; i<12; i++){
+    aux.push(i+1);
+};
+
+
+//EXTRACCION DE DATOS
+
+while( !aux.empty()){
+    int n= aux.top();
+    aux.pop();
+    std::cout << n << std:endl;
+}

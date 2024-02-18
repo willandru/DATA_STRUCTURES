@@ -1,0 +1,3 @@
+Conjunto matemático, operaciones de unión, intersección, diferencia, requiere función de comparación.
+
+std::set #include <set>

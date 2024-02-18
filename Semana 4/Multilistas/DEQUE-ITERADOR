@@ -1,0 +1,21 @@
+std::deque<int> miDeq;
+
+for (int i=0; i<5; i++){
+    miDeq.push_front(i+1);
+    miDeq.push_back(i+1);
+}
+
+// ITERADOR
+
+std::deque<int>::iterator miIt;
+
+for( miIt=miDeq.begin(); miIt!= miDeq.end(); miIt++ ){
+    std::cout << *miIt << std::endl;
+}
+
+// IMPRESION EN REVERSA
+
+std::deque<int>::reverse_iterator rit;
+for( rit=miDeq.rbegin(); rit!= miDeq.rend(); rit++ ){
+    std::cout << *rit << std::endl;
+}

@@ -1,0 +1,12 @@
+#include <list>
+#include <iostream>
+
+std::list< std::list<int> > multilista;
+std::list< std::list<int> >::iterator it;
+
+it= multilista.begin();
+it->push_back(4);
+it->push_back(8);
+it++;
+it++;
+it->push_back(13);

@@ -1,0 +1,58 @@
+//EJERCICIO: Considere el TAD vehiculo:
+
+class Vehiculo{
+    protected:
+        unsigned short modelo;
+        string placa;
+        unsigned int tarifaDiaria;
+    public:
+        unsigned short OBtenerModelo();
+        string OBtenerPLaca();
+        unsigned int obtenerTarifa();
+        ...
+}
+//... y considere una entidad que administra diferentes parqueaderos, cada uno visto como una lista (sequencia) de vehiculos.
+
+//EJERCICIO 1: ¿CÓMO SE REPRESENTA LA ENTIDAD?
+
+std::list< std::list<Vehiculo> > entidad;
+
+//EJECRICIO 2: ASUMINEDO QUE LOS PARQUEDEROS SE IDENTIFICAN CON UN NUMERO ENTERO CONSECUTIVO,
+// ¿CÓMO SE INSERTARÍA UN VEHICULO EN UN PARQUEDERO DADO?
+
+void InsertarVEhiculo (Vehiculo nVeh, int idParq, std::list<std::list<VEhivulo> > &entidad){
+    std::list<std::list<VEhiculo> > iterator itP;
+    itP= entidad.begin();
+    for(int i=1; i< idParq; i++){
+        itP++;
+    }
+    itP->push_back(nVeh);
+}
+
+//EJERCICIO 3: ¿CÓMO SE CALCULARÍA LA CANTIDAD TOTAL DE VEHICULOS EN LA ENTIDAD?
+
+unsigned int totalVehs(std::list< std::list<Vehiculo> > &entidad ){
+    unsigned int  total=0;
+    std::list< std::list<Vehiculo> >::iterator itP;
+    itP= entidad.begin();
+    for( ; itP!= entidad.end(); itP++){
+        total += itP -> size();
+    }
+    return total;
+}
+
+//EJECRICIO 4: ¿CÓMO SE CALCULARÍA EL VALOR TOTAL DIARIO  QUE RECIBE LA ENTIDAD POR LOS VEHICULOS PARQUEDAOS?
+
+unsigned int totalDiario( std::list<std::list<Vehiculo> > &entidad){
+    unsigned int total=0;
+    std::list<std::list<Vehiculo> >::iterator itP;
+    std::list<Vehiculo>::iterator itV; 
+    itP= entidad.begin();
+    for( ; itP != entidad.end(); itP++){
+        itV= itP->begin();
+        for(; itV != itP->end(); itV++){
+            total += itV->obtenerTarifa();
+        };
+    };
+    return total;
+}

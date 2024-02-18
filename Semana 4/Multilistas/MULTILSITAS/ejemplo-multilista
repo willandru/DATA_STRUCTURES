@@ -1,0 +1,26 @@
+#include <list>
+#include <iostream>
+
+
+int main(){
+
+    std::list< std::list<int> > miCont ={{0},{0},{0}};
+    std::list< std::list<int> >::iterator it;
+
+    it = miCont.begin();
+    it->push_back(4);
+    it->push_back(8);
+    it++;
+    it++;
+    it->push_back(13);
+
+    for( it=miCont.begin(); it != miCont.end(); it++){
+        std::list<int>::iterator it2;
+        for(it2= it->begin(); it2 != it->end(); it2++){
+            std::cout << *it2 << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    
+}

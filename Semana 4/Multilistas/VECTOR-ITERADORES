@@ -1,0 +1,22 @@
+
+//VECOTR CON ITERADORES
+
+std::vector<int> miVec;
+
+for(int i = 0; i<10; i++){
+    miVec.push_back(i+1);
+}
+
+std::vector<int>::iterator miIt;
+
+for (miIt = miVec.begin(); miIt != miVec.end(); miIt++){
+    std:cout << *miIt << std::endl;
+}
+
+// VECTOR CON IMPRESION EN REVERSA
+
+std::vector<int>::reverse:iterator rit;
+
+for(rit=miVec.rbegin(); != miVec.rend(); rit++){
+    std::cout << *rit << std::endl;
+}

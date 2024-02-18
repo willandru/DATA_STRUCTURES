@@ -1,0 +1,16 @@
+iterador stl ::
+        Objeto que puede recorrer un rango  de elementos predefinido a través de ciertos operadores.
+
+       -Input iterator: extrae datos, movimiento hacia adelante.
+       -Output iterator: almacena datos, movimineto hacia adelante.
+       -Forward iterator: almacena y extrae datos, movimiento hacia adelante.
+       -BIdirectional iterator: almacena y extrae datos, movimiento hacia adelante y hacia atras.
+       -Random acces iterator: almacena y extrae datos, acceso a alementos en cualqueir orden,.
+
+contenedores stl ::
+        Cada contenedor tiene varios tipos de iteradores.
+
+        -container::iterator :
+        iterador de lectura/escritura (entrada/salida)
+        -container::reverse_iterator :
+        iterador en secuencia inversa de lectura/escritura (entrada/salida)
