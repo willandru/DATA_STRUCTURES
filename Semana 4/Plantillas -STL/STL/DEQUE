@@ -1,0 +1,37 @@
+
+DEQUE
+_________________________________
+DECLARACION:
+
+std::deque<int> miDeq;
+
+INSERCION DE DATOS:
+
+miDeq.push_back(1);
+miDeq.push_front(2);
+
+ACCESO A DATOS:
+
+for (int i =0; i< miDeq.size(); i++){
+    std::cout << miDeq[i] << std:endl;
+}
+__________________________________
+
+-representa listas doblemente encadenadas (recorrido hacia adelante y hacia atras)
+-posiciones separadas en memoria (cualqueir parte)
+-elementos de un mismo tipo de dato (plantilla)
+-crece en memoria en cualquier punto de la secuencia
+
+vector<T>
+
+-size
+-front
+-clear
+-pop_back
+-pop_front
+-insert
+-empty
+-back
+-push_back
+-push_front
+-erase

@@ -1,0 +1,36 @@
+
+VECTOR
+_________________________________
+DECLARACION:
+
+std::vector<int> miVec;
+
+INSERCION DE DATOS:
+
+miVec.push_back(1);
+
+ACCESO A DATOS:
+
+for (int i =0; i< miVec.size(); i++){
+    std::cout << miVec[i] << std:endl;
+}
+__________________________________
+
+-representa arreglos que cambian de tamaño (dinámicos)
+-posiciones contiguas de memoria
+-elementos de un mismo tipo de dato (plantilla)
+-crece en memoria por el final( cola, extremo derecho)
+
+vector<T>
+
+-size
+-fron
+-clear
+-pop_back
+-pop_front
+-insert
+-empty
+-back
+-push_back
+-push_front
+-erase

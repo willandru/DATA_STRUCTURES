@@ -1,0 +1,39 @@
+
+VECTOR
+_________________________________
+DECLARACION:
+
+std::list<int> miList;
+
+INSERCION DE DATOS:
+
+miList.push_back(1);
+miList.push_front(2);
+
+ACCESO A DATOS:
+
+std:list<int>::iterator miIt;
+
+for(miIt= miList.begin(); miList != miList.end(); miList++){
+    std::cout << *miIt << std::endl
+    }
+__________________________________
+
+-representa arreglos que cambian de tamaño (dinámicos)
+-posiciones contiguas de memoria
+-elementos de un mismo tipo de dato (plantilla)
+-crece en memoria por el final( cola, extremo derecho)
+
+vector<T>
+
+-size
+-fron
+-clear
+-pop_back
+-pop_front
+-insert
+-empty
+-back
+-push_back
+-push_front
+-erase

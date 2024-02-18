@@ -1,0 +1,21 @@
+Standard Template Library:
+
+-Conteneroderes: clases predefinidas para el almacenamiento de datos.
+-Algoritmos: Operaciones básicas cómo búsqueda y ordenamiento.
+-Iteradores: Permiten recorrer los datos en los contenedores (similar a los apuntadores).
+
+___________________________
+Templates make algorithms independent of the data types.
+Iterators make algorithms independent of the container.
+___________________________
+
+CONTENEDORES SECUENCIALES ESTANDAR:
+
+-DE ACCESO ALEATORIO: 
+  -vector: Arreglos dinámicos.
+  std::vector   #include <vector>
+  -deque: Cola de doble cabeza.
+  std::deque    #include <deque>
+-DE ACCESO ITERATIVO:
+  -list: Doblemente encadenada.
+  std::list     #include <list>
