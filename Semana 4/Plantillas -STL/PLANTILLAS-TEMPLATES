@@ -1,0 +1,65 @@
+
+template<class identificador>
+declaracion_funcion;
+
+template< typename identificador>
+declaracion_funcion;
+_______________________________________________________________
+
+PLANTILLA CON 1 TIPO DE DATO:
+
+template<class T>
+T suma ( T a, T b){
+    return (a+b);
+}
+
+int a = suma<int>(5,7);
+double b= suma<double>(6.4, 1.7);
+_______________________________________________________________
+
+PLANTILLA CON 2 TIPOS DE DATOS:
+
+template<class T, class U>
+T suma(T a, U b){
+    return(a+b);
+}
+
+int i, j=25;
+long l= 4567;
+i = suma<int, long> (j,l);
+_______________________________________________________________
+
+PLANTILLA PARA CLASES:
+
+template<class T>
+class vec_par{
+    T valores[2];
+    public:
+    vec_par (T uno, T dos){
+        valores[0]= uno;
+        valores[1]= dos;
+    }
+    T minimo();
+};
+
+
+template<class T>
+T vec_par<T>::minimo(){
+    T resultado;
+    if(valores[0]<valores[1]){
+        resultado= valores[0];
+    }else{
+        resultado=valores[1];
+    }
+    return resultado;
+}
+
+
+vec_par<int> obj_i (115, 36);
+int res;
+res= obj_i.minimo();
+
+vec_par<float> obj_f(32.56, 76.98);
+float res2;
+res2= obj_f.minimo();
+_______________________________________________________________

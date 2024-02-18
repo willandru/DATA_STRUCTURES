@@ -1,0 +1,18 @@
+TAD Lista
+
+CONJUNTO MÍNIMO DE DATOS:
+-cabeza, tipo plantilla, representa el punto de inicio
+-cola, tipo plantilla, representa el punto de finalizacion
+
+COMPORTAMINETO (OPERACIONES) DEL OBJETO:
+-esVacia(), indica si la lista esta vacia
+-tamaño(), cantidad de elementos en la lista.
+-cabeza(), retorna el elemento en la cabeza.
+-cola(), retorna el elemento en la cola.
+-insertarCabeza(v), inserta v en la cabeza.
+-insertarCola(v), inserta v en la cola.
+-eliminarCabeza(), elimina el elemento en la cabeza.
+-eliminarCola(), elimina el elemento en la cola.
+-insertar( pos, v), insertar v en la posciion pos.
+-eliminar(pos), elimina el elemnto ubicado en pos.
+-vaciar(), elimina todos los elementos de la lista. 

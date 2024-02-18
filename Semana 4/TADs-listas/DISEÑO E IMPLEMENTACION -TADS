@@ -1,0 +1,12 @@
+
+1. Diseñar el TAD:
+descripcion + diagrama
+
+2. Escribir el archivo  de encabezado (.h):
+un archivo por TAD
+
+3. Escribir el archivo de implementacion (.cxx, .cpp):
+un archivo por TAD
+
+4. Escribir el archivo de programa (.cxx, .cpp):
+programa con procedimiento principal, incluye el encabezado de cada TAD  a utilizar.

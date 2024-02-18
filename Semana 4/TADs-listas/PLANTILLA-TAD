@@ -1,0 +1,28 @@
+** PLANTILLA BASE PARA EL DISEÑO DE TADs:
+
+TAD nombre
+
+Conjunto mínimo de datos:
+nombre valor (variable), tipo de dato, descripción
+...
+
+Comportamiento (operaciones) mínimas del objeto:
+nombre operacion (argumentos), descripcion funcional
+...
+______________________________________________________________
+
+_______
+EJEMPLO:
+
+TAD Carrera
+
+Conjunto mínimo de datos: 
+-nombre, cadena de caracteres, identificacion de la carrera
+-numEst, numero entero, cantidad de estudiantes inscritos
+
+Comportamiento (operaciones) del objeto:
+- ObtenerNombre(), retorna el nombre de la carrera
+- ObtenerNumEst(), retorna la cantidad de estudiantes de la carrera
+- FijarNombre(nuevNombre), modifica el nombre actual de la carrera
+- AgreagarEstu(), incrementa en uno el contador de estudiantes
+- EliminarEstu(), decrementa en uno el contador de estudiantes

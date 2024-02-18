@@ -1,0 +1,12 @@
+TAD Cola:
+
+CONJUNTO MÍNIMO DE DATOS:
+-cabeza, tipo plantilla, representa el extremo inicial.
+-cola, tipo plantilla, representa el extremo final.
+
+COMPORTAMINETO (OPERACIONES) DEL OBJETO:
+-esVacia(), indica si la cola esta vacia.
+-cabeza(), retorna el elemnto en la cabeza.
+-insertar(v), inserta v en la cola.
+-eliminar(), elimina el elemnto en la cabeza.
+-vaciar(), elimina todos los elementos en la cola.

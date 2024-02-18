@@ -1,0 +1,58 @@
+DIFERENTES POSIBILIDADES DE IMPLEMENTACION:
+-Estructura con datos y funciones propias o adicionales
+-Clase con niveles de acceso
+
+UTILIZANDO LIBRERIAS:
+-En el archivo de cabecera (.h) se realiza la declaración de los  datos y portotipos
+-En el archivo de implementacion (.cpp, .cxx) se desarrolla la implementacion de las operaciones.
+
+LIBRERIA, 2 ARCHIVOS:
+  -Encabezado (.h):
+Incluye la definicion del TAD, en términos de datos y prototipos de operaciones.
+  -Implementacion (.cpp o .cxx):
+Incluye la implementación epsecífica de las operaciones del TAD, se debe #include "TAD.h"
+________________________________________________________________________________________________
+
+OPCION 1: datos en estructuras, operaciones como funciones adicionales
+
+struct Carrera{
+  std::string nombre;
+  unsigned long numEst;
+};
+
+std::string ObtenerNombre(Carrea *c);
+unsigned long ObtenerNumEst(Carrera *c);
+void FijarNombre(Carrera *c, std::string nombre);
+void AgregarEstud(Carrera *c);
+void EliminarEstud(Carrera *c);
+__________________________________________________________________________________________________
+
+OPCION 2: datos y operaciones en estructura
+
+struct Carrera{
+  std::string nombre;
+  unsigned long numEst;
+
+  std::string ObtenerNombre();
+  unsigned long ObtenerNumEst();
+  void FijarNombre(std::string nombre);
+  void AgregarEstud();
+  void EliminarEstud();
+}
+___________________________________________________________________________________________________
+
+OPCION 3: datos y operaciones dentro de una clase de c++
+
+class Carrera{
+  public:
+  Carrera();
+  std::string ObtenerNombre();
+  unsigned long ObtenerNumEst();
+  void FijarNombre(std::string name);
+  void AgregarEstud();
+  void EliminarEstud();
+  protected:
+  std::string nombre;
+  unsigned long numEst;
+}
+_________________________________________________________________________________________________

@@ -1,0 +1,46 @@
+//libro.h
+
+class Libro{
+    public:
+    Libro();
+    std::string ObtenerNOmbre();
+    unsigned long OBtenerNOmbre();
+    void FijarNombre(std::string n_nombre)
+
+
+    protected:
+    std:string nombre;
+    unsigned long num_ejempl;
+};
+
+
+
+//libro.cxx
+
+
+//areacon.h
+
+class AreaCOnocimiento{
+    public:
+    AreaCONocimiento();
+    std::string OBtenerNOmbre();
+
+    protected:
+    std:string nombre;
+    std::list<Libro> l_libros;
+}
+
+
+//biblio.h
+
+class BIblioteca{
+    public:
+    Biblioteca();
+    void AgregarAreaC();
+    long COntarEjempl() const;
+    void EliminarAreaC();
+
+    protected:
+    std::string nombre;
+    std::list<AreaCOnocimiento> l_areas;
+}

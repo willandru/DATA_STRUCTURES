@@ -1,0 +1,11 @@
+TAD Pila
+
+CONJUNTO MÍNIMO DE DATOS:
+- tope, plantilla, representa el tope (elemento accesible)
+
+COMPORTAMINETO (OPERACIONES) DEL OBJETO:
+-esVacia(), indica si la pila está vacía.
+-tope(), retorna el elemento en el tope.
+-insertar(v), inserta v en la pila.
+-eliminar(), elimina el elemnto en el tope.
+-vaciar(), elimina todos los elementos de la pila.
