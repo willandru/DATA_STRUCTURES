@@ -30,7 +30,7 @@ Polinomio<S>& Polinomio<S>::operator+( const Polinomio< S >& der ) const
 {
   Polinomio<S> resultado;
 
-  // TODO #1
+  
 
   return resultado;
 }
@@ -51,8 +51,14 @@ template < class S >
 S Polinomio<S>::operator()( const S& x ) const
 {
   S resultado = S( 0 );
+  S base = S( 0 );
 
+  for (int i=0; i< this->size( ); i++){
+    base = ( *this )[i];
+    resultado+= base * std::pow(x, i);
+  }
   // TODO #3
+  
 
   return resultado;
 }

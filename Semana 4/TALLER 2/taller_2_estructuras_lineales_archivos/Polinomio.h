@@ -4,6 +4,7 @@
 #include <istream>
 #include <ostream>
 #include <vector>
+#include "Polinomio.hxx"
 
 template< class S > 
 class Polinomio : private std::vector< S >
@@ -19,6 +20,8 @@ class Polinomio : private std::vector< S >
 	        os << "(";
 	        if( p[ i ] > S( 0 ) )
 	          os << "+";
+			else
+			  os << "-";
 	        os << p[ i ];
 	        if( i != 0 )
 	          os << "x^" << i;
@@ -43,7 +46,7 @@ class Polinomio : private std::vector< S >
 		S operator()( const S& x ) const;
 };
 
-#include "Polinomio.hxx"
+
 
 #endif // __POLINOMIO__H__
 

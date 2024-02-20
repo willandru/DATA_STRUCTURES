@@ -1,0 +1,70 @@
+                                                                                                                                                                                                                                           
+┌──(kaliw㉿kaliw)-[~/…/DATA_STRUCTURES/Semana 4/TALLER 2/taller_2_estructuras_lineales_archivos]
+└─$ g++ -std=c++11 -o Polinomios main.cxx
+main.cxx:9:9: error: ‘Polinomio’ does not name a type
+    9 | typedef Polinomio<TEscalar> TPolinomio;
+      |         ^~~~~~~~~
+main.cxx:10:21: error: ‘TPolinomio’ was not declared in this scope
+   10 | typedef std::vector<TPolinomio> TPolinomios;
+      |                     ^~~~~~~~~~
+main.cxx:10:31: error: template argument 1 is invalid
+   10 | typedef std::vector<TPolinomio> TPolinomios;
+      |                               ^
+main.cxx:10:31: error: template argument 2 is invalid
+main.cxx: In function ‘int main(int, char**)’:
+main.cxx:38:36: error: cannot convert ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘const char*’
+   38 |   unsigned int nPolys = std::atoi( lineaEntr );
+      |                                    ^~~~~~~~~
+      |                                    |
+      |                                    std::string {aka std::__cxx11::basic_string<char>}
+In file included from /usr/include/c++/13/cstdlib:79,
+                 from main.cxx:1:
+/usr/include/stdlib.h:105:30: note:   initializing argument 1 of ‘int atoi(const char*)’
+  105 | extern int atoi (const char *__nptr)
+      |                  ~~~~~~~~~~~~^~~~~~
+main.cxx:44:11: error: request for member ‘push_back’ in ‘polys’, which is of non-class type ‘TPolinomios’ {aka ‘int’}
+   44 |     polys.push_back( TPolinomio( ) );
+      |           ^~~~~~~~~
+main.cxx:44:22: error: ‘TPolinomio’ was not declared in this scope; did you mean ‘TPolinomios’?
+   44 |     polys.push_back( TPolinomio( ) );
+      |                      ^~~~~~~~~~
+      |                      TPolinomios
+main.cxx:56:39: error: cannot convert ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘const char*’
+   56 |       unsigned int grado = std::atoi( token );
+      |                                       ^~~~~
+      |                                       |
+      |                                       std::string {aka std::__cxx11::basic_string<char>}
+/usr/include/stdlib.h:105:30: note:   initializing argument 1 of ‘int atoi(const char*)’
+  105 | extern int atoi (const char *__nptr)
+      |                  ~~~~~~~~~~~~^~~~~~
+main.cxx:61:12: error: invalid types ‘TPolinomios {aka int}[unsigned int]’ for array subscript
+   61 |       polys[ p ]->FijarCoeficiente( grado, coeficiente );
+      |            ^
+main.cxx:64:51: error: invalid types ‘TPolinomios {aka int}[unsigned int]’ for array subscript
+   64 |     std::cout << "Entrada " << p << " = " << polys[ p ] << std::endl;
+      |                                                   ^
+main.cxx:89:21: error: invalid types ‘TPolinomios {aka int}[unsigned int]’ for array subscript
+   89 |           << ( polys[ a_id ] + polys[ b_id ] ) << std::endl;
+      |                     ^
+main.cxx:89:37: error: invalid types ‘TPolinomios {aka int}[unsigned int]’ for array subscript
+   89 |           << ( polys[ a_id ] + polys[ b_id ] ) << std::endl;
+      |                                     ^
+main.cxx:98:21: error: invalid types ‘TPolinomios {aka int}[unsigned int]’ for array subscript
+   98 |           << ( polys[ a_id ] * polys[ b_id ] ) << std::endl;
+      |                     ^
+main.cxx:98:37: error: invalid types ‘TPolinomios {aka int}[unsigned int]’ for array subscript
+   98 |           << ( polys[ a_id ] * polys[ b_id ] ) << std::endl;
+      |                                     ^
+main.cxx:104:9: error: ‘TScalar’ was not declared in this scope; did you mean ‘TEscalar’?
+  104 |         TScalar x;
+      |         ^~~~~~~
+      |         TEscalar
+main.cxx:105:25: error: ‘x’ was not declared in this scope
+  105 |         tokens >> id >> x;
+      |                         ^
+main.cxx:108:19: error: invalid types ‘TPolinomios {aka int}[unsigned int]’ for array subscript
+  108 |           << polys[ id ]( x ) << std::endl;
+      |                   ^
+main.cxx:121:5: error: no match for ‘operator*’ (operand type is ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’})
+  121 |   ( *entrada ).close( );
+      |     ^~~~~~~~
