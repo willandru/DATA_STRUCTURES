@@ -1,4 +1,5 @@
 #include "Polinomio.h"
+#include <cmath>
 
 #ifndef __POLINOMIO__HXX__
 #define __POLINOMIO__HXX__
@@ -84,9 +85,12 @@ template < class S >
 S Polinomio<S>::operator()( const S& x ) const
 {
   S resultado = S( 0 );
+  S base = S( 0 );
 
-  // TODO #3
-
+  for (int i=0; i< this->size( ); i++){
+    base = ( *this )[i];
+    resultado+= base * std::pow(x, i);
+  }
   return resultado;
 }
 

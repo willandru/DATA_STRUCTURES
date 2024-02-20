@@ -104,6 +104,7 @@ int main( int argc, char* argv[] )
       break;
       case 'P':
       {
+               
         unsigned int id;
         TEscalar x;
         tokens >> id >> x;

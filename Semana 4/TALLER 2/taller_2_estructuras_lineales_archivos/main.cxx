@@ -102,12 +102,10 @@ int main( int argc, char* argv[] )
       break;
       case 'P':
       {
-        unsigned int id;
-        TEscalar x;
-        tokens >> id >> x;
-        std::cout
-          << "Polinomio (" << id << ", " << x << ") = "
-          << polys[ id ]( x ) << std::endl;
+          unsigned int id;
+          TEscalar x;
+          tokens >> id >> x;
+          std::cout << "Polinomio (" << id << ", " << x << ") = "<< polys[id](x) << std::endl;
       }
       break;
       default:
