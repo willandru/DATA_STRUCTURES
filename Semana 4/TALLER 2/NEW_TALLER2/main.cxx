@@ -1,24 +1,26 @@
+#include "Polinomio.h"
+
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include "Polinomio.h"
+
 // -------------------------------------------------------------------------
 typedef double TEscalar;
-typedef Polinomio<TEscalar> TPolinomio;
-typedef std::vector<TPolinomio> TPolinomios;
+typedef Polinomio<TEscalar> TPolinomio; //POLIMONIO EXTENDES VECTOR | VECTOR DE DOBLES
+typedef std::vector<TPolinomio> TPolinomios; //VECTOR DE VECTORES DE DOBLES
 
 // -------------------------------------------------------------------------
 int main( int argc, char* argv[] )
 {
-    if( argc < 2 )
-    {
-      std::cout << "Modo de uso: " << argv[ 0 ]  << "archivo_entrada" << std::endl;
-      return( 1 );
+  if( argc < 2 )
+  {
+    std::cout << "Modo de uso: " << argv[ 0 ]  << " archivo_entrada" << std::endl;
+    return( 1 );
 
-    }
-    std::string archEntrada = argv[ 1  ];
+  }
+  std::string archEntrada = argv[ 1 ];
 
   // Abrir archivo de texto
   std::ifstream entrada( archEntrada );
@@ -35,9 +37,7 @@ int main( int argc, char* argv[] )
   // Leer la cantidad de polinomios
   std::string lineaEntr;
   std::getline( entrada, lineaEntr );
-
-  
-  unsigned int nPolys = std::stoi( lineaEntr );
+  unsigned int nPolys = std::atoi( lineaEntr.c_str() );
 
   // Leer polinomios
   for( unsigned int p = 0; p < nPolys; ++p )
@@ -55,13 +55,13 @@ int main( int argc, char* argv[] )
     std::string token;
     while( tokens >> token )
     {
-      unsigned int grado = std::stoi( token );
+      unsigned int grado = std::atoi( token.c_str() );
       tokens >> token;
       TEscalar coeficiente = std::atof( token.c_str( ) );
 
       // Actualizar Polinomio
       polys[ p ].FijarCoeficiente( grado, coeficiente );
-
+      
     }
     std::cout << "Entrada " << p << " = " << polys[ p ] << std::endl;
 
@@ -98,6 +98,8 @@ int main( int argc, char* argv[] )
         std::cout
           << "Multiplicar (" << a_id << ", " << b_id << ") = "
           << ( polys[ a_id ] * polys[ b_id ] ) << std::endl;
+        
+       
       }
       break;
       case 'P':
@@ -120,7 +122,7 @@ int main( int argc, char* argv[] )
   }
 
   // Cerrar archivo de texto
-  entrada.close( );
+  ( entrada ).close( );
 
   return( 0 );
 }

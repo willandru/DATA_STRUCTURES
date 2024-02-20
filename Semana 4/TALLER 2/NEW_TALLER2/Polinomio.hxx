@@ -1,6 +1,7 @@
+#include "Polinomio.h"
+
 #ifndef __POLINOMIO__HXX__
 #define __POLINOMIO__HXX__
-#include <cmath>
 
 // -------------------------------------------------------------------------
 template < class S > 
@@ -25,11 +26,22 @@ void Polinomio<S>::FijarCoeficiente( unsigned int grado, const S& coeficiente )
   ( *this )[ grado ] = coeficiente;
 }
 
+//CUSTOM
+template < class S >
+S Polinomio<S>::GetCoeficiente(unsigned int grado) const
+{
+  if (grado < this->size()) {
+      return (*this)[grado];
+  } else {
+      return S(0);
+  }
+}
+
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S>& Polinomio<S>::operator+( const Polinomio< S >& der ) const
+Polinomio<S> Polinomio<S>::operator+( const Polinomio< S >& der ) const
 {
-    Polinomio<S> resultado;
+  Polinomio<S> resultado;
 
   // Determinar el grado máximo entre los dos polinomios
   unsigned int maxGrado = std::max(this->size(), der.size());
@@ -45,11 +57,12 @@ Polinomio<S>& Polinomio<S>::operator+( const Polinomio< S >& der ) const
   }
 
   return resultado;
+
 }
 
 // -------------------------------------------------------------------------
 template < class S > 
-Polinomio<S>& Polinomio<S>::operator*( const Polinomio< S >& der ) const
+Polinomio<S> Polinomio<S>::operator*( const Polinomio< S >& der ) const
 {
   Polinomio<S> resultado;
   
@@ -71,14 +84,8 @@ template < class S >
 S Polinomio<S>::operator()( const S& x ) const
 {
   S resultado = S( 0 );
-  S base = S( 0 );
 
-  for (int i=0; i< this->size( ); i++){
-    base = ( *this )[i];
-    resultado+= base * std::pow(x, i);
-  }
   // TODO #3
-  
 
   return resultado;
 }

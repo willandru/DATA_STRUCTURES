@@ -5,7 +5,6 @@
 #include <ostream>
 #include <vector>
 
-
 template< class S > 
 class Polinomio : private std::vector< S >
 {
@@ -20,8 +19,6 @@ class Polinomio : private std::vector< S >
 	        os << "(";
 	        if( p[ i ] > S( 0 ) )
 	          os << "+";
-			else
-			  os << "-";
 	        os << p[ i ];
 	        if( i != 0 )
 	          os << "x^" << i;
@@ -40,9 +37,10 @@ class Polinomio : private std::vector< S >
 		virtual ~Polinomio( );
 
 		void FijarCoeficiente( unsigned int grado, const S& coeficiente );
+    S GetCoeficiente(unsigned int grado) const;
 
-		Polinomio< S >& operator+( const Polinomio< S >& der ) const;
-		Polinomio< S >& operator*( const Polinomio< S >& der ) const;
+		Polinomio< S > operator+( const Polinomio< S >& der ) const;
+		Polinomio< S > operator*( const Polinomio< S >& der ) const;
 		S operator()( const S& x ) const;
 };
 
