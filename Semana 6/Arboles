@@ -1,0 +1,23 @@
+relaciones::reciente-antiguo
+
+
+Contenencia: el gato, leo, pertecnecen al género animal
+¿Comopsicion?¿Multilista?
+->Jerarquias extensas se complican en multitlistas
+
+
+        ÁRBOL
+
+Deja de ser una esturctura secuencial, es una esructura no-lineal.
+Contenedor óptimo RECURRENTE
+
+DEFINICION: Conjunto finito de elementos del mismo tipo de dato, conectados por un conjunto finito de líneas dirigídas
+
+    Elementos::Nodos
+    Lineas DIrigídas:: Ramas
+
+Conjunto VAcio -> Árbol vacío
+Conjunto unitario -> UNico nodo -> Raíz
+Conjunto de dos o más: raíz + conjuntos disyuntos de nodos -> cada uno un (sub)árbol
+
+EL arbol tiene ramas dirigidas, unicamente puedo moverme desde la raiza hacia abajo. No tengo forma directa de ir desde un hijo hasta un padre. hay formas indirectas .

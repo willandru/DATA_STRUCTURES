@@ -1,0 +1,57 @@
+TAD Cancion
+Datos mínimos:
+-titulo, cadena de caracteres, en titulo de la cancion.
+-duracion, entero largo, representa la duracion de la cancion
+-reps, entero, cantidad de vecesa cancion ha sido esuchada.
+OPeraciones:
+-OBtenerTItulo(), retorna el titulo acutal de la canicon,
+-OBtenerDuracion(), reotrna la duracion de la cancion
+-ObtenerReps(), retorna cantidad de reporduciones actuales
+-FijarTitulo(nTItulo), cambia el titulo de la cancion
+-FIjarDuracion(nDUracion), cambia la duraciond ela cancion 
+-FijarREps(nReps), cambia el numero de repeticiones de la cancion.
+
+
+Tad Album
+DAtos minimos:
+-titulo, cadena de caracteres, representa el titulo del album.
+-anno, entero, respresenta el annio de lanzamiento.
+-canciones, lista de Cancion, representa las canicones que hacen parte del album
+OPeraciones:
+-ObtenerTItulo(), reotrna titulo del albuim
+-OBtenerAnno, retorna el anno del album,
+-OBtenerCanciones, retorna las canciones del album
+-FIjaRTitulo(nTItulo), cambia el titulo actual del album
+-FijarAnno(nAnno), cambia el Anno del album
+-FIjarCanciones(nCAcniones), cambia el conjunto de canciones del album
+
+
+Tad Artista
+DAtosMInimos:
+-nombre, cadena de caracteres, nombre del artista
+-nacion, cadena de caracteres, PAis de nacimiento del artista
+-albumes, lista de ALbum, lista de albumes del artista
+OPeraciones:
+-OBtenerTItulo(),
+-ObtenerNAcion(),
+-OBtenerALbumes(),
+-FijarTItulo(nTTIulo),
+-FIjarNAcion(nNAcion),
+-FIjarALbumes(nALbumes),
+
+
+Tad Reproductor
+DatosMínimos:
+-artistas, lista de ARtista, representa la informacion que representa el isstema de musica
+ sobre la informaciond e los artistas, labumesy canciones
+-colaRep, cola de Cancion, cola de reproduccion de canciones del usuario.
+OPeraciones:
+-ObtenerArtistas(),
+-OBtenerColaRep(),
+-FIjarArtistas(nArtistas),
+-FijarColaRep(nColaRep),
+-AgregarCAncion(artista, album, titulo ,duracion), agrega una nueva cacion dentro de la estructura de artistas, albumes y cancioens.
+Se utiliza ela rtista y el album para ubicar la cancio, y se agrega inicialiando el contader de reproducciones 
+-OrdenarCOla(),
+-OrdenarPorReproducciones(lista, inicio, final), ordena una lista de
+ canciones desde la poscicion de incion hasta la psocion final
