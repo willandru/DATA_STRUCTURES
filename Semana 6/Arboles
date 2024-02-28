@@ -21,3 +21,79 @@ Conjunto unitario -> UNico nodo -> Raíz
 Conjunto de dos o más: raíz + conjuntos disyuntos de nodos -> cada uno un (sub)árbol
 
 EL arbol tiene ramas dirigidas, unicamente puedo moverme desde la raiza hacia abajo. No tengo forma directa de ir desde un hijo hasta un padre. hay formas indirectas .
+
+
+Raíz: nodo inicia, el orígen
+Nodo Hoja: nodo sin una conexion hacia otro nodo.
+NOdo Interior: los demás nodos.
+
+NODO PADRE::Cada nodo solo tiene un nodo.
+NODO HIJOS:: el nodo directamente debajo de la jerarquía
+NODOS HERMANOS:: Comparten el mismo padre
+NODOS ANCESTRO:: Todos los que esten en los nivees por encima
+NODDOS DESCENDIENTES:: Todos los que estan por debajo en la jeerarquía. 
+
+            TERMINOLOGÍA
+
+CAMINO:: Secuencia de conexione sque me llevan de un nodo a otro
+LONGITUD:: numero de aristas/conexiones qiue utilizo
+ALTURA O PROFUNDIDAD: altura
+
+ARBOL VACIO:: ALTURA = -1
+ARBOL CON SOLO RAÍZsructura = 0
+
+La altura se puee
+
+NIvel 0: Raiz, unico nodo
+
+EL nivel mas conmas hijods me da el ANCHO
+
+DEFINICION RECURRN-;Es un conjunto de nodos que O bien es vacio o Bien
+
+    PREGUNTAS EN CLASE
+
++ ¿Nodos nivel 2? : {n4,n5,n6,n8, n1
++ HErmanos de n8: {n9}
++ SUbarbol en n3: si nodo raiz n3, nodo hijo n8.
++ NOdos hojas?: {n10, n11, n12, n6, n15, n13, n14, n9}
++ Hijos de n2?: {n6, n7}
++ Altura del arbol: 3
+
+
+GRADO DEL NODO: Cantidad de conexiones que salen del nodo
+GRADO DEL ARBOL: Maximo grado del árbol
+ARBOL EQUILIBRADO: Cuando un arbol de grado k, y siendo h la altura del arbol, cada nodo dniveles h-1 tiene ecxactamente grado k.
+ARBOL PERFECTAMENTE EQUILIBRADO: loos niveles menores a h tienen grado k.
+
+
+
+
+ORDEN:: El orden de los nodos hijos de un nodo
+PESO:: VAlor particular que se le asigna al nodo
+
+
+RECORRIDO:: Avanzar a través de los nodos del árbol, utilizando las ramoas o aristas..
+    SOlo puedo avanzar por las conexiones definidas; 
+    DE forma explicita, con el retorno de la recurrencia que hago sobre el arbol me puedo devolver.
+    CASI TOODS LOS RECORRIDOS SON RECURRENTES, LOS QUE NO UTILIAN UNA ESTURCTURA PARA IR MARCANDO EL RECORRIDO
+
+
+VISITAR VS ATRAVEZAR::
+    Visitar:: Llego al nodo y extraigo su informacion. En teoria solo visito un nodo 1 vez
+    REcorrer o atravezar pero sin VISITAR pues ya se hizo. 
+
+Recorridos en profundidad:Irse por u na sola rama hasta llegar a una hoja, con el retorno dela recurrencia probar otra rama
+
+PRE-ORDEN:: VISITAR ANTES DE BAJAR
+POS-ORDEN:: LLEGO AL NODO Y PASO, CUANDO ME ESTOY REGRESANDO EN EL RETORNO DE LA RECURRENCIA, AHÍ SI LO VISITO.
+
+
+RECORRIDOS EN ANCHURA: NO me voy por un camino, sino que svisito tosod sloes hermanos al mismo nivel
+
+
+ARBOL GENERAL: No hay limite para la cantidad d ehijos de cada nodo.
+N-ARBOL: Pongo un limite a la cantidad de hijos, maximo n [0-n]
+n-arbol completo: debe tenerr n hijos o 0 exactamente.
+
+ARBOL BINARIO (2-arbol): CAda nodo puede tener 0,1 o 2 hijos.
+    Hijo Izquierdo y Hijo Derecho
