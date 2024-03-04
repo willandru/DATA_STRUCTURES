@@ -16,22 +16,17 @@ int main() {
 
   menu::printWelcome();
   
-while(!string_valido){
-  std::cout << "Por favor ingrese su tablero: ";
-  std::getline(std::cin, letras_jugador);
-
-  string_valido = controlador_juego::vLetras(letras_jugador);
-
-  if (!string_valido) {
-    std::cout << "Tablero invalido, intente de nuevo\n";
-  }
-}
-
   menu::printMenu();
   
 while (continueProgram){
-  std::cout << "Por favor ingrese un comando: ";
+  std::cout << "$ ";
   std::getline(std::cin, comando);
+
+   if (comando.empty()) {
+      continue; 
+    }
+
+  
   std::stringstream ss(comando);
   std::string token;
 

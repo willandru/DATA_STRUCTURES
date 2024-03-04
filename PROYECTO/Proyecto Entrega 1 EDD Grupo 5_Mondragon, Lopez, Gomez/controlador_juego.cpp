@@ -32,8 +32,13 @@ bool controlador_juego::vComando(const std::vector<std::string> &strings) {
     it++;
     arg2 = *it;
   }
+  if (arg1.empty() && arg2.empty()) {
+    
+      std::cout << "$\n";
+    return true;
+  }
 
-  if (arg1 == "inicializar") {
+  else if (arg1 == "iniciar") {
     // COMPONENTE 1.1
     if (!arg2.empty()) {
       juegoGlobal.controlador_juego::inicializarDiccionario(arg2);
@@ -158,7 +163,7 @@ void controlador_juego::inicializarDiccionarioInverso(std::string fileName) {
   }
 
   std::regex inValido("[A-Za-z]+");
-  
+
   std::ifstream inFile(fileName);
   std::list<std::string> lines;
 
@@ -173,21 +178,32 @@ void controlador_juego::inicializarDiccionarioInverso(std::string fileName) {
     lines.push_back(line);
   }
 
-  inFile.close();
+  inFile.close(); // Don't forget to close the file after reading
 
-  std::list<std::string>::reverse_iterator rIt;
-  for (rIt = lines.rbegin(); rIt != lines.rend(); rIt++) {
-      if (std::regex_match(*rIt, inValido)){
-        this->diccionario_inverso.push_back(*rIt);
-        }
+  for (const std::string& line : lines) {
+    std::stack<char> reverseString;
+    std::string newLine = "";
+
+    for (size_t i = 0; i < line.length(); i++) {
+      reverseString.push(line[i]);
+    }
+
+    while (!reverseString.empty()) {
+      newLine += reverseString.top();
+      reverseString.pop();
+    }
+
+    if (std::regex_match(newLine, inValido)) {
+      this->diccionario_inverso.push_back(newLine);
+    }
   }
 
   if (!this->diccionario_inverso.empty()) {
     std::cout << "El diccionario inverso " << fileName
               << " ha sido inicializado correctamente." << std::endl;
-  } else if (this->diccionario_inverso.empty()) {
+  } else {
     std::cerr << "El diccionario inverso " << fileName
-              << " no se puedon inicializar." << std::endl;
+              << " no se puede inicializar." << std::endl;
     return;
   }
 

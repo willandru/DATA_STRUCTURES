@@ -3,11 +3,10 @@
 
 void menu::printWelcome(){
   std::cout << "Bienvenid@ al sistema de apoyo para el juego Scrabble!\n\n";
-  std::cout << "Por favor ingrese su tablero, este debera de contar con 7 letras sin espacios\n";
 }
 void menu::printMenu(){
   std::cout << "Estos son los comandos disponibles: \n";
-  std::cout << "1. inicializar\n";
+  std::cout << "1. iniciar\n";
   std::cout << "2. iniciar_inverso\n";
   std::cout << "3. puntaje\n";
   std::cout << "4. iniciar_arbol\n";
