@@ -140,3 +140,86 @@ POS-ORDEN
 
 IN-ORDEN
 {-3 0 1 3 4 5 6 7 15 20 25 30}
+
+En un arbol binario ordenado, el recorrido IN.ORDEN siempre va a salir ordenado.
+
+POR NIVELES
+{7 3 20 0 5 15 25 -3 1 4 6 30}
+
+
+BUSQUEDA
+
+Comparar valor buscado con dato en nodo:
+- si es menor, buscar subarbol iquierod
+. si es mayor , buscar subarbol derechjo
+-si es igual, lo encontramos
+
+COMPLEJIDAD?: DEPENDE DE LA ALTURA DEL ARBOL
+ ~ O(log n)
+ Arbol como lista? -> O(n)
+
+
+ ELIMINAR:
+
+
+ Cojer el menor NODO del subarbol DERECHO
+
+
+ ejercicio:
+ ¿COMO QUEDA UN ARBOL BINARIO ORDENDAO:
+
+
+ INserterar esos elementos en ese orden
+
+ :::::----------------:::::::.
+
+ SI tengo la lista en preorden. entonces puedo recorrer facilmente el arbol-
+
+
+ NodoBinario
+ {
+    - T Un dato
+    - NodoBinario<T> UN vinculo al hijo izq
+    - NodoBinario<T> * hijo dere; UN vinculo al hijo dere
+
+    +constructores, resctructores
+    + asignar, extraer el dato del nodo
+    +asignar, extraer una refgerencia a nodo
+ }
+
+ Arbol -SOlo debo conocer el nodo raiz para tener la estuctura completa.
+
+ TAD NODO BINARIO
+
+
+ TAD Arbol binario ordenado
+ {
+    -Referencia al nodo raiz
+
+    + constru /destru
+    +obtener fijar nodo raiz
+    + arbol vacio
+    +nods arbol
+    +altura alrbol
+    +insertar
+    +eliminar
+    +buscar
+    +preorder
+    +inorder
+    +posorder
+ }
+
+tadArbol.h
+ TAD ARbolBInarioORd{
+
+    NOdoBInario<T> *raiz
+
+    OPERACIONES:
+
+bool esVAcio();
+bool eliminar(T& val);
+.
+.
+.
+
+ }
