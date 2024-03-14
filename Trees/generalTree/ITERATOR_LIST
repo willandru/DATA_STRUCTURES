@@ -1,0 +1,25 @@
+// Declare an iterator for the list
+std::list<NodoGeneral<T>*>::iterator it;
+
+// Iterate over the list using the iterator
+for (it = nodoActual->desc.begin(); it != nodoActual->desc.end(); ++it) {
+    // Access the current element using the iterator
+    NodoGeneral<T>* hijo = *it;
+
+    // Perform operations on the current element
+    // For example, hijo->obtenerDato() to access the data stored in the node
+}
+
+
+
+
+
+
+
+// Iterate over the list using a range-based for loop
+for (NodoGeneral<T>* hijo : nodoActual->desc) {
+    // Access the current element directly
+    // hijo represents the current element (a pointer to NodoGeneral<T>)
+    // Perform operations on the current element
+    // For example, hijo->obtenerDato() to access the data stored in the node
+}
