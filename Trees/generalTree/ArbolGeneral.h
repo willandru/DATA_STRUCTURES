@@ -24,7 +24,6 @@ class ArbolGeneral {
         void preOrden();
         void posOrden();
         void nivelOrden();
-
 };
 
 #include "ArbolGeneral.hxx"
