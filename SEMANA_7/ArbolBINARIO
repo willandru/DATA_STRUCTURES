@@ -1,0 +1,225 @@
+2 NODOS
+
+maximo 2 hijos, o 1 hijo (izquierdo o derecho)
+
+Evaluar expresiones aritmeticas
+
+Expresar de manera jerarquica las operaciones aritmeticas
+
+Procesos de decosion. Preguntas con respuestas binarios.
+
+Busqueda (nodods ordenados segun algunas propiedaes)
+
+
+RECORRIDOS:: EN profundidad . Backtracking o regreso de la recurrencia nos permite volver a probar a las ritas .
+
+POasar por el nodo puedo pasar varias veces.
+
+VISITA:: Extraer el dato que esta guardado el nodo. ESO SE PEUDE HACER OSLO 1 VEZ
+
+Dependiendo del momento de hacer la visita se clasifica: Pre-order . pos ,,...
+
+
+RECORRIDOS POR ANCHURA::: Revisar todos los hijos por nivesles antes de bajar al siguiente nivel
+
+
+RECORRIDOS EN PROFUNDIDAD SON RECURRENTES
+RECORRIDOS EN ANCHURA , NO CNECESETIO DEVOLVERME, PUEDE SER ITGERATIVO, CON ALGUNA ESTRUCTURA QUE GARANTICE ESE ORDEN.
+
+
+recorridos en profundidad, ineeretemente reucrrentes, siempre me voy primero por una rama, luego me ovy por laa otra
+
+
+PREORDER:
+Llamado Recurrente
+
+1. Cuando llego al nodo extraer inmediatamente el valor
+2. Irme por el subarbol izquierdo, y repito el paso 1 y 2. HAsta qyue ya no pude avanzar mas.
+3. HAcer lo mismo sobre el hijo derecho, hasta no poder visitar mas hijos derechos.
+
+EJemplo de clase 
+
+F.visito
+B.visito
+A.visito
+B
+D.visito
+C.visito
+D
+E.visito
+D
+B
+F
+G.visito
+I.visito
+H.visito
+
+F B A D C E G I H
+
+pos-orden
+
+1. Recorrer hijo izquierdo
+2. REcorrer hijo derecho
+3. VIsitar
+
+A. visitar
+C.visitar
+E.
+D
+B.
+H
+I
+G
+F
+
+A C E D B H I G F
+
+IN-ORDER
+
+1. Recorrer hijo izquierdo
+2. VISitar
+3. REcorrer hijo derecho
+
+A
+B
+C
+D
+E
+F
+G
+H
+I
+
+A B C D E F G H I
+
+
+-------------------
+
+Recorrido por niveles: NO recurrente., no debo volver d enivel  para probar otra cosa.
+
+
+COLA -> <{F, B , G, A, D, I, C, E, H}<
+
+F B G A D I C E H
+
+<F>
+<>
+F: visito
+
+<B G>
+<>
+B:visito
+G:visito
+
+<A D I>
+A:visito
+<>
+
+
+
+siguiente iteracion, saco el primero en la cola, lo visito, y medo todos los hijos .
+siguietne iteracion, saco el primeor de la cola ,lo visiot, meot otodos los hijos.
+seiguiente iteracion.
+
+
+--------------------------------------------
+
+    ARBOL BINARIO ORDENADO
+
+Propiedad de ordenamiento:
+
+Siempre mi hijo izquierod es menor que el nodo, simepre el hijo derecho es mayor que el valor delnodo. 
+TOdos los elementos en la rama izquierda del nodo son menores, todos los hijos en la rama derecha son mayores. 
+No se permiten valores repetidos
+
+PRE-ORDEN
+{7 3 0 -3 1 5 4 6 20 15 25 30}
+
+POS-ORDEN
+{-3 1 0 4 6 5 3 15 30 25 20 7}
+
+IN-ORDEN
+{-3 0 1 3 4 5 6 7 15 20 25 30}
+
+En un arbol binario ordenado, el recorrido IN.ORDEN siempre va a salir ordenado.
+
+POR NIVELES
+{7 3 20 0 5 15 25 -3 1 4 6 30}
+
+
+BUSQUEDA
+
+Comparar valor buscado con dato en nodo:
+- si es menor, buscar subarbol iquierod
+. si es mayor , buscar subarbol derechjo
+-si es igual, lo encontramos
+
+COMPLEJIDAD?: DEPENDE DE LA ALTURA DEL ARBOL
+ ~ O(log n)
+ Arbol como lista? -> O(n)
+
+
+ ELIMINAR:
+
+
+ Cojer el menor NODO del subarbol DERECHO
+
+
+ ejercicio:
+ ¿COMO QUEDA UN ARBOL BINARIO ORDENDAO:
+
+
+ INserterar esos elementos en ese orden
+
+ :::::----------------:::::::.
+
+ SI tengo la lista en preorden. entonces puedo recorrer facilmente el arbol-
+
+
+ NodoBinario
+ {
+    - T Un dato
+    - NodoBinario<T> UN vinculo al hijo izq
+    - NodoBinario<T> * hijo dere; UN vinculo al hijo dere
+
+    +constructores, resctructores
+    + asignar, extraer el dato del nodo
+    +asignar, extraer una refgerencia a nodo
+ }
+
+ Arbol -SOlo debo conocer el nodo raiz para tener la estuctura completa.
+
+ TAD NODO BINARIO
+
+
+ TAD Arbol binario ordenado
+ {
+    -Referencia al nodo raiz
+
+    + constru /destru
+    +obtener fijar nodo raiz
+    + arbol vacio
+    +nods arbol
+    +altura alrbol
+    +insertar
+    +eliminar
+    +buscar
+    +preorder
+    +inorder
+    +posorder
+ }
+
+tadArbol.h
+ TAD ARbolBInarioORd{
+
+    NOdoBInario<T> *raiz
+
+    OPERACIONES:
+
+bool esVAcio();
+bool eliminar(T& val);
+.
+.
+.
+
+ }

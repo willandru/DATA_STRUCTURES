@@ -23,6 +23,7 @@ bool ArbolGeneral<T>::esVacio(){
     return this->raiz== NULL;
 }
 
+
 template<class T>
 NodoGeneral<T>* ArbolGeneral<T>::obtenerRaiz(){
     return this->raiz;
@@ -46,6 +47,16 @@ bool ArbolGeneral<T>::insertarNodo(T padre, T n){
         (this->raiz).adicionarDesc(n)
         added =true;
        }
+       else{
+        std::list<NodoGeneral<T>* >::iterator it;
+        NodoGeneral<T>* aux;
+        for(it=desc.begin(); it!=desc.end(); it++){
+            aux= *it;
+            if(!added && aux.obtenerDato== padre){
+                aux.insertarNodo(T padre, T n);
+            }
+        }
+       }
     }
     // si el arbol es vacio:
         //crear nuevo nodo, asignar dato, poner ese nodo como raiz
@@ -58,6 +69,25 @@ bool ArbolGeneral<T>::insertarNodo(T padre, T n){
 
 template <class T>
 bool ArbolGeneral<T>::eliminarNodo( T n){
+    bool eliminado= false;
+    if(this->esVacio()){
+        return eliminado;
+    }
+    else if((this->raiz).obtenerDato == n){
+        delete this->raiz;
+        this->raiz=NULL;
+        eliminado = true;
+        return eliminado;
+    }else{
+        std::list<NodoGeneral<T>* >::iterator it;
+        NodoGeneral<T>* aux;
+        for(it=desc.begin(); it!=desc.end(); it++){
+            aux= *it;
+            if(!eliminado && aux.obtenerDato()== n ){
+                aux.eliminarNodo(T n);
+            }
+        }
+    }
     // si el arbol es vacio:
         //retornar
 
@@ -72,7 +102,24 @@ bool ArbolGeneral<T>::eliminarNodo( T n){
 
 template <class T>
 bool ArbolGeneral<T>::buscar(T n){
-    bool 
+    bool encontrado=false;
+    if((this->raiz).esVacio()){
+        return encontrado;
+    }else if((this->raiz).obtenerDato== n){
+        encontrado= true;
+        return encontrado;
+    }
+    else{
+
+        std::list<NodoGeneral<T>* >::iterator it;
+        NodoGeneral<T>* aux;
+        for(it=desc.begin(); it!=desc.end(); it++){
+            aux= *it;
+            if(!encontrado && aux.obtenerDato()== n ){
+                aux.buscar(T n);
+            }
+        }
+    }
     // si el arbol no esta vacio:
         //comparo dato en el nodo actual con dato en parametor
         //s i es ese, retorno que lo encontre
@@ -109,6 +156,18 @@ template <class T>
 
 tempalte <class T>
 unsigned int ArbolGeneral<T>::tamano(){
+    int tamano=0;
+    if((this->raiz).esVacio()){
+        return tamano;
+    }else{
+        std::list<NodoGeneral<T>* >::iterator it;
+        for (it=nodo->desc.begin(); it != nodo->desc.end(); it++){
+            aux= *it;
+            tamano++;
+            aux.t
+
+        }
+    }
     //si el arbol esta vacio retorno 0
     //si no esta vacio, para cada uno de los hijos llamao a tamaño
     // acumulo esos tamaños en una variabñe
