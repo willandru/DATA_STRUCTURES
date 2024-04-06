@@ -6,17 +6,19 @@
 template<class T>
 class NodoGeneral{
     protected:
-    T dato;
-    std::list<NodoGeneral<T>* > desc;
+        T dato;
+        std::list<NodoGeneral<T>* > desc;
     public:
-    NodoGeneral();
-    ~NodoGeneral();
-    T& obtenerDato();
-    void fijarDato(T& val);
-    void limpiarLista();
-    void adicionarDesc(T& nval);
-    bool eliminarDesc(T& val);
-    bool esHoja();
+        NodoGeneral();
+        ~NodoGeneral();
+
+        T& obtenerDato();
+        void fijarDato(T& val);
+        
+        void limpiarLista();
+        void adicionarDesc(T& nval);
+        bool eliminarDesc(T& val);
+        bool esHoja();
 
 };
 

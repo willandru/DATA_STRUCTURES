@@ -7,8 +7,8 @@ NodoGeneral<T>::NodoGeneral(){
 
 template< class T>
 NodoGeneral<T>::~NodoGeneral(){
-    std::list< NodoGeneral<T> >::iterador it;
-    for(it=desc.begin(); it!= desc.end(); it++)
+    std::list< NodoGeneral<T> >::iterator it;
+    for(it=this->desc.begin(); it != this->desc.end(); it++)
         delete *it;
     this->desc.clear()
 }
@@ -28,6 +28,7 @@ template< class T>
 void NodoGeneral<T>::limpiarLista(){
     this->desc.clear();
 }
+
 
 template< class T>
 void NodoGeneral<T>::adicionarDesc(T& nval){

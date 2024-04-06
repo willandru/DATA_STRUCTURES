@@ -1,0 +1,26 @@
+Árboles de Sintaxis
+Árboles de Expresión
+Árboles de Decisión
+
+
+		ÁRBOL DE SINTAXIS
+
+Representar la sintaxis de un codigo fuente, es una representacion abstracta, que no incluye otdas las representaciones del lenguaje, ejemplo parentesis estan implicitos. Es decir sera el nivel o comando clave del arbol loque me dirá que operación see va a hacer.
+
+Para trocitos de codigo de fuente cortos, me pertmite ver su estructura, com estan relacionados los elmenetos, o ver si se puede representar de otra manera
+	
+	while (b!=0)
+		if(a>b)
+			a=a-b;
+		else
+			b=b-a;
+	return a;
+
+		START
+	while		return
+		
+condition
+
+
+		ARBOL DE EXPRESION
+Enfocado en representar expresiones aritméticas o lógicas. 
