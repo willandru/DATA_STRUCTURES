@@ -24,3 +24,8 @@ condition
 
 		ARBOL DE EXPRESION
 Enfocado en representar expresiones aritméticas o lógicas. 
+
+
+	ARBOLES DE DESCICION
+
+	

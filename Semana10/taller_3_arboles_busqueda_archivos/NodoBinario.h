@@ -16,7 +16,6 @@ class NodoBinario {
     NodoBinario<T>* obtenerHijoIzq();
     NodoBinario<T>* obtenerHijoDer();
     void fijarDato(T& val);
-    void limpiar();
     void fijarHijoIzq(NodoBinario<T>* izq);
     void fijarHijoDer(NodoBinario<T>* der);
     bool eliminarHijoIzq();

@@ -1,0 +1,29 @@
+//.h
+
+#ifndef __ARBOLGENERAL__H__
+#define __ARBOLGENERAL__H__
+
+#include <list>
+
+template <class T>
+class ArbolGeneral{
+    protected:
+    
+
+
+}
+
+
+#include "ArbolGeneral.hxx"
+
+#endif
+
+
+-----------------------------
+//.hxx
+
+
+#include "ArbolGeneral.h"
+
+template <class T>
+ArbolGeneral<T>::ArbolGeneral();

@@ -39,12 +39,13 @@ bool ArbolGeneral<T>::insertarNodo(T padre, T n){
     bool added = false;
     if (this->esVacio()){
         NodoGeneral<T>* nuevoNodo = new NodoGeneral<T>();
-        nuevoNodo->fijarDato(n);
-        this->raiz = nuevoNodo;
+        nuevoNodo->fijarDato(padre);
+        nuevoNodo->adicionarDesc(n);
+        this->fijarRaiz(nuevoNodo);
         added = true;
     } else{
        if( (this->raiz).obtenerDato == padre ){
-        (this->raiz).adicionarDesc(n)
+        (this->raiz).adicionarDesc(n);
         added =true;
        }
        else{

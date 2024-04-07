@@ -14,31 +14,31 @@ NodoGeneral<T>::~NodoGeneral(){
 }
 
 template< class T>
-T& NodoGeneral<T>::obtenerDato(){
+NodoGeneral<T>::T& NodoGeneral<T>::obtenerDato(){
     return this->dato;
     
 }
 
 template< class T>
-void NodoGeneral<T>::fijarDato(T& val){
+NodoGeneral<T>::void NodoGeneral<T>::fijarDato(T& val){
     this->dato = val;
 }
 
 template< class T>
-void NodoGeneral<T>::limpiarLista(){
+NodoGeneral<T>::void NodoGeneral<T>::limpiarLista(){
     this->desc.clear();
 }
 
 
 template< class T>
-void NodoGeneral<T>::adicionarDesc(T& nval){
+NodoGeneral<T>::void NodoGeneral<T>::adicionarDesc(T& nval){
     NodoGeneral<T> *nodo = new NodoGeneral<T>;
     nodo->fijarDato(nval);
     this->desc.push_back(nodo);
 }
 
 template< class T>
-bool NodoGeneral<T>::eliminarDesc(T& val){
+NodoGeneral<T>::bool NodoGeneral<T>::eliminarDesc(T& val){
     //buscar el nodo con el valor dado
     std::list< NodoGeneral<T>* >::iterator it;
     NodoGeneral<T>* aux;
