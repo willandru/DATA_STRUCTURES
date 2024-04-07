@@ -21,7 +21,7 @@ T& NodoGeneral<T>::obtenerDato(){
 }
 
 template <class T>
-bool NodoGeneral<T>::fijarDato(T ndato){
+bool NodoGeneral<T>::fijarDato(T& ndato){
     this->dato= ndato;
     return true;
 }

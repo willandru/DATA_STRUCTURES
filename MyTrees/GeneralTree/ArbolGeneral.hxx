@@ -38,12 +38,32 @@ bool ArbolGeneral<T>::insertarNodo(T padre, T n){
             added=true;
         }else{
             std::list<NodoGeneral<T> *>::iterator it;
-            for(it=this->desc.begin(); )
+            NodoGeneral<T>* aux= new NodoGeneral<T>;
+            for(it=this->desc.begin(); it !=this->desc.end(); it++){
+                aux= *it;
+                if(aux->obtenerDato()== padre){
+                    aux->adicionarDesc(n)
+                    added=true;
+                }
+            }
         }
     }
+    return added;
 }
 
 
 template <class T>
+void ArbolGeneral<T>::preOrden(){
+    if(this->raiz==NULL){
+        std::cout << "El arbol esta vacio" << std::endl;
+    }else{
+        std::cout << this->raiz->obtenerDato() << std::endl;
+        std::list<NodoGeneral<T> *>::iterator it;
+        NodoGeneral<T>* aux= new NodoGeneral<T>;
+        for(it=this->desc.begin(); it !=this->desc.end(); it++){
+            aux= *it;
+            std::cout << aux->raiz->obtenerDato() << std::endl;
+        }
+    }
 
-void ArbolGeneral<T>::preOrden();
+}
