@@ -98,7 +98,7 @@ bool ArbolGeneral<T>::buscar( T dato){
         std::cout << "El arbol esta vacio" << std::endl;
         return false;
     }else{
-        return (this-raiz)->buscar( dato);
+        return (this->raiz)->buscar( dato);
     }
 }
 
@@ -106,10 +106,12 @@ template <class T>
 bool ArbolGeneral<T>::eliminar( T dato){
     if(this->raiz==NULL){
         std::cout << "El arbol esta vacio" << std::endl;
-    }else if(this->raiz == dato){
-        delete this-> raiz;
+        return false;
+    }else if((this->raiz)->obtenerDato() == dato){
+        delete this->raiz;
         this->raiz = NULL;
+        return true;
     }else{
-        (this-raiz)->eliminar( dato);
+        return (this->raiz)->eliminar( dato);
     }
 }

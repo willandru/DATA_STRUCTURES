@@ -23,12 +23,15 @@ int main() {
     arbol.insertarNodo(8, 3);
     arbol.insertarNodo(8, 7);
     arbol.insertarNodo(4, 10);
+    std::cout << arbol.buscar(6)<<std::endl;
+    arbol.eliminar(14);
+    std::cout << arbol.buscar(6)<<std::endl;
     
 
     // Imprimir el árbol en preorden
     std::cout << "Preorden del árbol general: ";
     arbol.preOrden();
-    std::cout << std::endl;
+    
 
     return 0;
 }
