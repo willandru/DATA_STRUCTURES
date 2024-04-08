@@ -87,3 +87,37 @@ void NodoGeneral<T>::posOrden(){
     }
     std::cout<< this->dato <<" ";
 }
+
+
+template <class T>
+bool NodoGeneral<T>::buscar(T ndato){
+     typename std::list<NodoGeneral<T> *>::iterator it;
+    for(it=this->desc.begin(); it!=this->desc.end(); it++){
+        if((*it)->obtenerDato()== ndato){
+            return true;
+        }else{
+           if ((*it)->buscar(ndato)) {
+                return true; 
+            }
+        }
+    }
+    return false;
+}
+
+template <class T>
+bool NodoGeneral<T>::eliminar(T ndato){
+    
+    typename std::list<NodoGeneral<T> *>::iterator it;
+    for(it=this->desc.begin(); it!=this->desc.end(); it++){
+        if((*it)->obtenerDato()== ndato){
+            delete *it;
+            this->desc.erase(it);
+            return true;
+        }else{
+             if ((*it)->eliminar(ndato)) {
+                return true; 
+            }
+        }
+    }
+    return false;
+}

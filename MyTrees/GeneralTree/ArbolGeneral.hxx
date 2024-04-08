@@ -92,3 +92,24 @@ void ArbolGeneral<T>::posOrden(){
 }
  
 
+template <class T>
+bool ArbolGeneral<T>::buscar( T dato){
+    if(this->raiz==NULL){
+        std::cout << "El arbol esta vacio" << std::endl;
+        return false;
+    }else{
+        return (this-raiz)->buscar( dato);
+    }
+}
+
+template <class T>
+bool ArbolGeneral<T>::eliminar( T dato){
+    if(this->raiz==NULL){
+        std::cout << "El arbol esta vacio" << std::endl;
+    }else if(this->raiz == dato){
+        delete this-> raiz;
+        this->raiz = NULL;
+    }else{
+        (this-raiz)->eliminar( dato);
+    }
+}

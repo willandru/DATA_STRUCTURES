@@ -20,6 +20,8 @@ class NodoGeneral{
         bool insertarNodo(T padre, T n);
         void preOrden();
         void posOrden();
+        bool buscar(T dato);
+        bool eliminar(T dato);
         
 };
 

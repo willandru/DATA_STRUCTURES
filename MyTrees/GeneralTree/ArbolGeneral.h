@@ -18,6 +18,8 @@ class ArbolGeneral{
         int altura();
         int altura(NodoGeneral<T>* nodo);
         bool insertarNodo(T padre, T n);
+        bool buscar(T dato);
+        bool eliminar(T dato);
         void preOrden();
         void posOrden();
         
