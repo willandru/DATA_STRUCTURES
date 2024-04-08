@@ -13,13 +13,14 @@ class NodoGeneral{
         NodoGeneral();
         ~NodoGeneral();
         T& obtenerDato();
-        bool fijarDato(T ndato);
+        bool fijarDato(T& ndato);
         std::list<NodoGeneral<T> *> obtenerDesc();
-        bool adicionarDesc(T nHijo);
+        bool adicionarDesc(T& nHijo);
         void preOrden();
         bool esHoja();
+        bool insertarNodo(T padre, T n);
         
-}
+};
 
 
 #include "NodoGeneral.hxx"

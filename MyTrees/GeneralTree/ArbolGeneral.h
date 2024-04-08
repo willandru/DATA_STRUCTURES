@@ -10,7 +10,7 @@ class ArbolGeneral{
     protected:
         NodoGeneral<T>* raiz;
     public:
-        ArbolGeneral(T n);
+        ArbolGeneral();
         ~ArbolGeneral();
         NodoGeneral<T>* obtenerRaiz();
         bool fijarRaiz(T ndato);
@@ -18,7 +18,8 @@ class ArbolGeneral{
         void preOrden();
         bool esVacio();
         int altura();
-}
+        int altura(NodoGeneral<T>* nodo);
+};
 
 
 #include "ArbolGeneral.hxx"

@@ -2,6 +2,7 @@
 
 #include "ArbolGeneral.h"
 #include <iostream>
+#include <list>
 
 template <class T>
 ArbolGeneral<T>::ArbolGeneral(){
@@ -45,7 +46,7 @@ int ArbolGeneral<T>::altura(NodoGeneral<T> * nodo){
     if(nodo->esHoja()){
         alt=0;
     }else{
-        std::list<NodoGeneral<T>* >::iterator it;
+        typename std::list<NodoGeneral<T>* >::iterator it;
         int alth;
         for(it=nodo->desc.begin(); it !=nodo->desc.end(); it++){
             alth= this->altura(*it);
@@ -66,30 +67,12 @@ bool ArbolGeneral<T>::insertarNodo(T padre, T n){
         (this->raiz)->adicionarDesc(n);
         return true;
     }else{
-        return insertarNodo(padre, n, this->raiz);
+        return this->raiz->insertarNodo(padre, n);
     }
 }
 
-template <class T>
-bool ArbolGeneral<T>::insertarNodo(T padre, T n, NodoGeneral<T>* nraiz){
-    if(nraiz == NULL ){
-        return false;
-    }
-    if(nraiz->obtenerDato() == padre){
-        nraiz->adicionarDesc(n);
-        return true;
-    }
 
-    std::list<NodoGeneral<T> * >::iterator it;
-    for(it=nraiz->desc.begin(); it !=nraiz->desc.end(); it++){
-        if(insertarNodo(padre, n , *it)){
-            return true;
-        }
-    }
 
-    return false;
-
-}
 
 
 template <class T>

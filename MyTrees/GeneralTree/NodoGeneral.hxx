@@ -1,6 +1,7 @@
 //NodoGeneral.hxx
 #include "NodoGeneral.h"
 #include <iostream>
+#include <list>
 
 template <class T>
 NodoGeneral<T>::NodoGeneral(){
@@ -9,7 +10,7 @@ NodoGeneral<T>::NodoGeneral(){
         
 template <class T>
 NodoGeneral<T>::~NodoGeneral(){
-    std::list<NodoGeneral<T> *>::iterator it;
+    typename std::list<NodoGeneral<T> *>::iterator it;
     for(it=this->desc.begin(); it!=this->desc.end(); it++){
         delete *it;
     }
@@ -28,21 +29,22 @@ bool NodoGeneral<T>::fijarDato(T& ndato){
 }
 
 template <class T>
-std::list<NodoGeneral<T> *> NodoGeneral<T>::obtenerDesc(){
+typename std::list<NodoGeneral<T> *> NodoGeneral<T>::obtenerDesc(){
     return this->desc;
 }
 
 template <class T>
-bool NodoGeneral<T>::adicionarDesc(T nHijo){
+bool NodoGeneral<T>::adicionarDesc(T& nHijo){
     NodoGeneral<T>* nodoHijo= new NodoGeneral<T>;
     nodoHijo->fijarDato(nHijo);
     this->desc.push_back(nodoHijo);
+    return true;
 }
 
 template <class T>
 void NodoGeneral<T>::preOrden(){
     std::cout<< this->dato <<" ";
-    std::list<NodoGeneral<T> *>::iterator it;
+    typename std::list<NodoGeneral<T> *>::iterator it;
     for(it=this->desc.begin(); it!=this->desc.end(); it++){
         (*it)->preOrden();
     }
@@ -51,4 +53,21 @@ void NodoGeneral<T>::preOrden(){
 template <class T>
 bool NodoGeneral<T>::esHoja(){
     return this->desc.size() ==0;
+}
+
+template <class T>
+bool NodoGeneral<T>::insertarNodo(T padre, T n) {
+    if (this->dato == padre) {
+        NodoGeneral<T>* nodoHijo = new NodoGeneral<T>;
+        nodoHijo->fijarDato(n);
+        this->desc.push_back(nodoHijo);
+        return true;
+    }
+    typename std::list<NodoGeneral<T> * >::iterator it;
+    for(it=this->desc.begin(); it !=this->desc.end(); it++){
+         if ((*it)->insertarNodo(padre, n)) {
+            return true;  
+        }
+    }
+    return false;
 }

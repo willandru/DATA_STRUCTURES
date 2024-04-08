@@ -1,0 +1,3 @@
+┌──(kaliw㉿kaliw)-[~/GITHUB/DATA_STRUCTURES/MyTrees/GeneralTree]
+└─$ g++ -std=c++11 -o pruebaInsertar  main.cpp
+
