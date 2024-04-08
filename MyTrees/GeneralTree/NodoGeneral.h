@@ -16,9 +16,10 @@ class NodoGeneral{
         bool fijarDato(T& ndato);
         std::list<NodoGeneral<T> *> obtenerDesc();
         bool adicionarDesc(T& nHijo);
-        void preOrden();
         bool esHoja();
         bool insertarNodo(T padre, T n);
+        void preOrden();
+        void posOrden();
         
 };
 

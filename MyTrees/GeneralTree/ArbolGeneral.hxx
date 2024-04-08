@@ -67,12 +67,9 @@ bool ArbolGeneral<T>::insertarNodo(T padre, T n){
         (this->raiz)->adicionarDesc(n);
         return true;
     }else{
-        return this->raiz->insertarNodo(padre, n);
+        return (this->raiz)->insertarNodo(padre, n);
     }
 }
-
-
-
 
 
 template <class T>
@@ -84,5 +81,14 @@ void ArbolGeneral<T>::preOrden(){
         }
  }
 
+
+template <class T>
+void ArbolGeneral<T>::posOrden(){
+    if(this->raiz==NULL){
+        std::cout << "El arbol esta vacio" << std::endl;
+    }else{
+        (this->raiz)->posOrden();
+        }
+}
  
 

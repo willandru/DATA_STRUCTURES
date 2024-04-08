@@ -41,23 +41,20 @@ bool NodoGeneral<T>::adicionarDesc(T& nHijo){
     return true;
 }
 
-template <class T>
-void NodoGeneral<T>::preOrden(){
-    std::cout<< this->dato <<" ";
-    typename std::list<NodoGeneral<T> *>::iterator it;
-    for(it=this->desc.begin(); it!=this->desc.end(); it++){
-        (*it)->preOrden();
-    }
-}
 
 template <class T>
 bool NodoGeneral<T>::esHoja(){
     return this->desc.size() ==0;
 }
 
+
+
+
+
+
 template <class T>
 bool NodoGeneral<T>::insertarNodo(T padre, T n) {
-    if (this->dato == padre) {
+    if ( this->dato == padre) {
         NodoGeneral<T>* nodoHijo = new NodoGeneral<T>;
         nodoHijo->fijarDato(n);
         this->desc.push_back(nodoHijo);
@@ -70,4 +67,23 @@ bool NodoGeneral<T>::insertarNodo(T padre, T n) {
         }
     }
     return false;
+}
+
+template <class T>
+void NodoGeneral<T>::preOrden(){
+    std::cout<< this->dato <<" ";
+    typename std::list<NodoGeneral<T> *>::iterator it;
+    for(it=this->desc.begin(); it!=this->desc.end(); it++){
+        (*it)->preOrden();
+    }
+}
+
+
+template <class T>
+void NodoGeneral<T>::posOrden(){
+    typename std::list<NodoGeneral<T> *>::iterator it;
+    for(it=this->desc.begin(); it!=this->desc.end(); it++){
+        (*it)->posOrden();
+    }
+    std::cout<< this->dato <<" ";
 }

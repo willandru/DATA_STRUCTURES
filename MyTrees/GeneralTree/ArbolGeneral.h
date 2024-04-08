@@ -14,11 +14,14 @@ class ArbolGeneral{
         ~ArbolGeneral();
         NodoGeneral<T>* obtenerRaiz();
         bool fijarRaiz(T ndato);
-        bool insertarNodo(T padre, T n);
-        void preOrden();
         bool esVacio();
         int altura();
         int altura(NodoGeneral<T>* nodo);
+        bool insertarNodo(T padre, T n);
+        void preOrden();
+        void posOrden();
+        
+        
 };
 
 
