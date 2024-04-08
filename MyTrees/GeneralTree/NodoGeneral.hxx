@@ -1,5 +1,6 @@
 //NodoGeneral.hxx
 #include "NodoGeneral.h"
+#include <iostream>
 
 template <class T>
 NodoGeneral<T>::NodoGeneral(){
@@ -36,4 +37,18 @@ bool NodoGeneral<T>::adicionarDesc(T nHijo){
     NodoGeneral<T>* nodoHijo= new NodoGeneral<T>;
     nodoHijo->fijarDato(nHijo);
     this->desc.push_back(nodoHijo);
+}
+
+template <class T>
+void NodoGeneral<T>::preOrden(){
+    std::cout<< this->dato <<" ";
+    std::list<NodoGeneral<T> *>::iterator it;
+    for(it=this->desc.begin(); it!=this->desc.end(); it++){
+        (*it)->preOrden();
+    }
+}
+
+template <class T>
+bool NodoGeneral<T>::esHoja(){
+    return this->desc.size() ==0;
 }

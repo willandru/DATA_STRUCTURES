@@ -1,6 +1,7 @@
 //ArbolGeneral.hxx
 
 #include "ArbolGeneral.h"
+#include <iostream>
 
 template <class T>
 ArbolGeneral<T>::ArbolGeneral(){
@@ -20,35 +21,74 @@ NodoGeneral<T>* ArbolGeneral<T>::obtenerRaiz(){
 
 template <class T>
 bool ArbolGeneral<T>::fijarRaiz(T ndato){
+    if (raiz != nullptr) {  
+        delete raiz; 
+    }
     NodoGeneral<T>* nodoRaiz= new NodoGeneral<T>;
     nodoRaiz-> fijarDato(ndato);
     this-> raiz= nodoRaiz;
+    return true;
 }
 
 template <class T>
-bool ArbolGeneral<T>::insertarNodo(T padre, T n){
-    bool added=false;
-    if(this->raiz == NULL){
-        (this->raiz).fijarDato(padre);
-        (this->raiz).adicionarDesc(n);
-        added=true;
+int ArbolGeneral<T>::altura(){
+    if(this->raiz ==NULL){
+        return -1;
     }else{
-        if((this->raiz).obtenerDato() == padre){
-            (this->raiz).adicionarDesc(n);
-            added=true;
-        }else{
-            std::list<NodoGeneral<T> *>::iterator it;
-            NodoGeneral<T>* aux= new NodoGeneral<T>;
-            for(it=this->desc.begin(); it !=this->desc.end(); it++){
-                aux= *it;
-                if(aux->obtenerDato()== padre){
-                    aux->adicionarDesc(n)
-                    added=true;
-                }
+        return this->altura(this->raiz);
+    }
+}
+
+template <class T>
+int ArbolGeneral<T>::altura(NodoGeneral<T> * nodo){
+    int alt = -1;
+    if(nodo->esHoja()){
+        alt=0;
+    }else{
+        std::list<NodoGeneral<T>* >::iterator it;
+        int alth;
+        for(it=nodo->desc.begin(); it !=nodo->desc.end(); it++){
+            alth= this->altura(*it);
+            if(alt < alth+1){
+                alt=alth+1;
             }
         }
     }
-    return added;
+    return alt;
+}
+
+
+template <class T>
+bool ArbolGeneral<T>::insertarNodo(T padre, T n){
+    if(this->raiz == NULL){
+        this->raiz = new NodoGeneral<T>;
+        (this->raiz)->fijarDato(padre);
+        (this->raiz)->adicionarDesc(n);
+        return true;
+    }else{
+        return insertarNodo(padre, n, this->raiz);
+    }
+}
+
+template <class T>
+bool ArbolGeneral<T>::insertarNodo(T padre, T n, NodoGeneral<T>* nraiz){
+    if(nraiz == NULL ){
+        return false;
+    }
+    if(nraiz->obtenerDato() == padre){
+        nraiz->adicionarDesc(n);
+        return true;
+    }
+
+    std::list<NodoGeneral<T> * >::iterator it;
+    for(it=nraiz->desc.begin(); it !=nraiz->desc.end(); it++){
+        if(insertarNodo(padre, n , *it)){
+            return true;
+        }
+    }
+
+    return false;
+
 }
 
 
@@ -57,13 +97,9 @@ void ArbolGeneral<T>::preOrden(){
     if(this->raiz==NULL){
         std::cout << "El arbol esta vacio" << std::endl;
     }else{
-        std::cout << this->raiz->obtenerDato() << std::endl;
-        std::list<NodoGeneral<T> *>::iterator it;
-        NodoGeneral<T>* aux= new NodoGeneral<T>;
-        for(it=this->desc.begin(); it !=this->desc.end(); it++){
-            aux= *it;
-            std::cout << aux->raiz->obtenerDato() << std::endl;
+        (this->raiz)->preOrden();
         }
-    }
+ }
 
-}
+ 
+

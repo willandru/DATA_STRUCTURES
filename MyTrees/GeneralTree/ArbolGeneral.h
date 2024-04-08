@@ -16,6 +16,8 @@ class ArbolGeneral{
         bool fijarRaiz(T ndato);
         bool insertarNodo(T padre, T n);
         void preOrden();
+        bool esVacio();
+        int altura();
 }
 
 
