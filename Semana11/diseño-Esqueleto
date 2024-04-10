@@ -1,0 +1,31 @@
+-----------------------------------------------------------------------------------------------------
+DISEÑO:  Obtener trasnformacion global
+// pasos a seguir
+//1. Obtener el dato ID almacenado en el nodo actual, que corresponde a una articulacion , es decir buscar el nodo con el ID.
+//2. almacenar en una pila la matriz del nodo enocntrado y la de su padre, consecutivamente hasta llegar a la raiz.
+//3. retornar la multiplicacoin de las matrices almacenadas en la pila
+
+float** Sistema::ObtenerTransfGLOBAL (int artID){
+	
+	Arbol<T>* raiz=(this->esqueleto)->obtenerRaiz();
+
+}
+
+-----------------------------------------------------------------------------------------------------
+DISEÑO: Validar misma posicion absoluta
+// pasos a seguir
+//1. retornar la matriz de OBtenerTransfoGlobal, tanto para artID1 y artID2.
+//2. Verificar si las matrices son iguales
+
+bool Sistema::MismaPosicionAbsoluta(int artID1, int artID2){
+
+}
+
+------------------------------------------------------------------------------------------------------
+DISEÑO: Identificar complejidad del esqueleto 
+//pasos a seguir
+//1. retornar la altura del arbol
+int Sistema::ComplejidadEsqueleto(){
+
+}
+------------------------------------------------------------------------------------------------------
