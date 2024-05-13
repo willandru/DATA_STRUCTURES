@@ -1,0 +1,26 @@
+ALGORTMO DE PRIM
+
+-Vojtéch Jarnik (~30 años antes qie dijkstra)
+-ENcontrar el arbol de recburbiento minimo: Una estreuctura arbol generada a aprtir del grfo, que me permite llegar  los demas veritces del grafo conc osot minimo.
+- Asume que tenemos costos, que nuestras conexziones tienen cireto peso o valor.
+- Algunos soportaran pesos negativos.
+
+
+-uN ALGORTMO VORAZ, HACER ENC ADA PASO LOQUE SEA MEJOR.
+.-DE CADA VERTICE, LOQ UE HAGO CADA VEZ ES IRA GREGAN DO LA ARISTA DE MENOR PESO CADA VEZ., Y SA ER CUALES HAN SIDO VISITADAS ANTES.a
+
+COSTO MINIMO --- ARISTA O CISITADAS HA NO VISITADAS
+
+
+Prim({V,E}, X)
+v_visitados={x}
+e_new={}
+
+mientras(v_visitados ~= V)
+	escoger arista(u,v)ocon peso minoimo
+	
+	tener aristas ordenadas por peso, e ir cogiendo de menor en adelante.
+	
+
+Vnew={A,F,E,B,G,C,D}
+Enew={(A,F), (F,E),(E,B),(E,G),(G,C),(E,D)}
