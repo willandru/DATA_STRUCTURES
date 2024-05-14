@@ -19,15 +19,17 @@ public:
 
     void insertarVertice(T vertice);
     void imprimirMatrizAdyacencia();
-    /*
-    void insertarArista(int fila, int columna, T& costo);
+   
+    void insertarArista(T ver1, T ver2, T costo);
 
-    T buscarVertice(T& vertice);
-    T buscarArista(int fila, int columna);
+    int buscarVertice(T vertice);
+    
+    T buscarArista(T ver1, T ver2);
 
-    bool eliminarVertice(T& vertice);
-    bool eliminarArista(int fila, int columna); 
-*/
+    bool eliminarVertice(T vertice);
+   
+    bool eliminarArista(T ver1, T ver2); 
+
 };
 
 #endif
