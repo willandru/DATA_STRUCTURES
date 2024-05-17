@@ -1,0 +1,167 @@
+GRAFOS
+
+(E,V)
+
+V -> vertices
+E -> (x,y) conexiones entre vertices
+
+Grafos dirigidos o digrafos: ARISTAS 
+
+
+NO DIRIGIDOS :  (x,y) = (y,x)
+
+DIRIGIDOS :  (x,y) ~= (y,x)
+
+
+ejemplo 1: No dirigido
+	V={1,4,5,7,9}
+	E={(1,5), (1,7)}
+	
+	v={a,vb,c,d,e}
+	e={
+	
+-----------------------------CONEXIONES DIRIGIDAS
+
+X->Y    Y es adyacente a X (no al reves).... LA conexion x,y rdsta en mi conjunto de aristas, predecesor, sucesor y origen.
+	GRADO DEL NODO: CANTIDAD DE CONEXINOES QUE VA A TENER MI VERTICE.
+		GRADO DE SALIDA: cuantas aristas salen
+		GRADO DE ENTRADO
+
+
+	nodo fuente -> grado de entrada =0
+	nodo sumidero -> grado de salida =0
+
+---------------NO DIRIGIDO--------
+
+	X-Y
+
+
+Ruta o Camino: Secuencia de vertices w1,w2,w3...
+
+
+----GRAFO DIRIGIDO ACICLICO
+
+
+Ordenamiento TOpologico en los árboles.
+
+Los arbo.es son un grafo dirigidio aciclico
+
+
+-------------------------------
+GRAFOS CONECTADOS O NO / CONEXO O DISCONEXO. <- grafos no dirigidos
+
+
+
+GRAFO DIRIGIDO --DEBILMENTE CONECTADO-----
+
+Cunado puedo ir de todos a todos, con las direccione sactuales. <- GRafo fuertemente conectaod.
+
+DEBILMENTE CONECTADO-> lE QUITO LAS CONEXIONES  ALAS ARITSATAS, Y SE VUELVE NO DIRIGIDO Y AHORA PUEDO IR DE TODOS A TODOS. 
+
+NO DIRIGIDO
+Disconexo
+CONexo
+
+Dirigido
+DEbilmente conectado
+FUertemente conectado
+
+
+
+ETIQUETAS O FRASES O PESOS DE LA ARISTAS.
+
+Puede oinerele un valor, etiqueta, nombresito, representando algo en el contexto del grafo.
+IMportancia
+Magnitud
+
+
+
+grafo vacio ->O
+
+
+grafo trivial -> 1nodo
+
+GRAFO REGULAR: Cada vertice el mismo numero de vecinos.
+
+0 regular. solo vertices no aristas.
+1 regular. cada vertice tiene 1 vecino
+
+GRAFO COMPLETO, aristas entre todos con todos.
+
+----------------------IMPLEMENTACIKON
+
+Lista de adyacencia
+Lista de incidencia
+Matriz de adyacencia
+Matriz de incidencia.
+
+
+LSITA DE ADYACENCIA, PARA CADA VERITCE hay una lista, en dicha lista se ponen los nodeos adyacentes a this.
+
+
+
+LISTA DE INCIDENCIA
+
+MATRIZ DE ADYAFENCIA (mxm)
+
+MATRIZ DE INCIDENCIA.... filas los vertices, en columnas las aristas. (mxn)
+
+
+
+MATRIZ DE ADYACENCIA
+
+
+	1	 2	 3	 4
+1	1	1	1	0
+2	0	0	1	0
+3	0	0	0	1
+4	1	0	1	0
+
+
+
+LISTA DE ADYACENCIA
+	
+	1 = [1,2,3]
+	2 = [3]
+	3 = [4]
+	4 = [1,3]
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PUEDO ETENER UN CAMINO DESDE CADA VERTICE HASTA CADA OTRO VERTICE, NO QUE DE UN VERTICE SALGA PAR ATODOS. LAS CONEXIONES DENTRO DEL GRAFO ME PERMITEN QUE YO PUEDA IR DE TODOS A TODOS. 

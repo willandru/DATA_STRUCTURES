@@ -21,6 +21,7 @@ mientras(v_visitados ~= V)
 	
 	tener aristas ordenadas por peso, e ir cogiendo de menor en adelante.
 	
+EJERCICION EN CLASE:
 
 Vnew={A,F,E,B,G,C,D}
 Enew={(A,F), (F,E),(E,B),(E,G),(G,C),(E,D)}
