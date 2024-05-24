@@ -21,7 +21,7 @@ int main() {
 
     std::cout<< grafo.buscarVertice('C') << std::endl;
 
-    std::cout<< grafo.buscarArista('A','A') << std::endl;
+    std::cout<< grafo.buscarCostoArista('A','A') << std::endl;
 
     grafo.eliminarVertice('B');
     grafo.imprimirMatrizAdyacencia();

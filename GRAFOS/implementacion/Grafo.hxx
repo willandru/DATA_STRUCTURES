@@ -35,19 +35,28 @@ int Grafo<T>::cantidadAristas() {
 template<class T>
 void Grafo<T>::insertarVertice(T vertice) {
     vertices.push_back(vertice);
-    int num_ver = cantidadVertices();
+    int num_ver = vertices.size(); // Cambiado para usar el tamaño del vector directamente
+    // Redimensionar la matriz de adyacencia
+    aristas.resize(num_ver); // Asegura que hay suficientes filas
+    for (int i = 0; i < num_ver; ++i) {
+        aristas[i].resize(num_ver, 0); // Asegura que cada fila tiene suficientes columnas
+    }
+}
 
-    if (num_ver == 1) {
-        // Para el primer vertice
-        aristas.push_back(std::vector<T>(1, 0));
+template<class T>
+void Grafo<T>::insertarArista(T vertice1, T vertice2, T costo) {
+    // Find the indices of the vertices in the vertices vector
+    int index1 = buscarVertice(vertice1);
+    int index2 = buscarVertice(vertice2);  
+    // Ensure that both vertices are found
+    if (index1 != -1 && index2 != -1) {
+        // Update the value in the adjacency matrix at the specified position
+        aristas[index1][index2] = costo;
+        // Since this is an undirected graph, update the value at the symmetric position as well
+        //aristas[index2][index1] = costo;
     } else {
-        // Agrega una nueva fila
-        aristas.push_back(std::vector<T>(num_ver-1, 0));
-
-        //Agrega una nueva columna
-        for(int i = 0; i < num_ver; ++i){
-            aristas[i].push_back(0);
-        }
+        // Print an error message if any vertex is not found
+        std::cerr << "Error: One or both vertices not found." << std::endl;
     }
 }
 
@@ -75,23 +84,7 @@ void Grafo<T>::imprimirVectorVertices(){
 
 
 
-template<class T>
-void Grafo<T>::insertarArista(T vertice1, T vertice2, T costo) {
-    // Find the indices of the vertices in the vertices vector
-    int index1 = buscarVertice(vertice1);
-    int index2 = buscarVertice(vertice2);
-    
-    // Ensure that both vertices are found
-    if (index1 != -1 && index2 != -1) {
-        // Update the value in the adjacency matrix at the specified position
-        aristas[index1][index2] = costo;
-        // Since this is an undirected graph, update the value at the symmetric position as well
-        //aristas[index2][index1] = costo;
-    } else {
-        // Print an error message if any vertex is not found
-        std::cerr << "Error: One or both vertices not found." << std::endl;
-    }
-}
+
 
 
 
@@ -109,12 +102,12 @@ int Grafo<T>::buscarVertice(T vertice) {
 }
 
 
+
 template<class T>
-T Grafo<T>::buscarArista(T vertice1, T vertice2) {
+T Grafo<T>::buscarCostoArista(T vertice1, T vertice2) {
     // Find the indices of the vertices in the vertices vector
     int index1 = buscarVertice(vertice1);
     int index2 = buscarVertice(vertice2);
-    
     // Ensure that both vertices are found
     if (index1 != -1 && index2 != -1) {
         // Return the cost of the edge between the vertices from the adjacency matrix
@@ -132,18 +125,15 @@ template<class T>
 bool Grafo<T>::eliminarVertice(T vertice) {
     // Find the index of the vertex in the vertices vector
     int index = buscarVertice(vertice);
-
     // Check if the vertex was found
     if (index != -1) {
         // Remove the vertex from the vertices vector
         vertices.erase(vertices.begin() + index);
-
         // Remove the corresponding row and column from the adjacency matrix
         aristas.erase(aristas.begin() + index);
         for (int i = 0; i < aristas.size(); ++i) {
             aristas[i].erase(aristas[i].begin() + index);
         }
-
         // Return true indicating successful removal
         return true;
     } else {

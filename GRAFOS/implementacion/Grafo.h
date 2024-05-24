@@ -18,14 +18,16 @@ public:
     int cantidadAristas();
 
     void insertarVertice(T vertice);
+    void insertarArista(T ver1, T ver2, T costo);
+    
     void imprimirMatrizAdyacencia();
     void imprimirVectorVertices();
    
-    void insertarArista(T ver1, T ver2, T costo);
+    
 
     int buscarVertice(T vertice);
     
-    T buscarArista(T ver1, T ver2);
+    T buscarCostoArista(T ver1, T ver2);
 
     bool eliminarVertice(T vertice);
    
